@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/geanie/Desktop/Docs/Projects/demo/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
-  /Users/geanie/Desktop/Docs/Projects/demo/node_modules/react-native/ReactCommon/jschelpers/Unicode.h
+  /Users/geanie/Desktop/Docs/Projects/ToursApp/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
+  /Users/geanie/Desktop/Docs/Projects/ToursApp/node_modules/react-native/ReactCommon/jschelpers/Unicode.h
