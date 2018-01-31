@@ -8,6 +8,22 @@
 		<data>
 		vd7zGwvvvitZGse98c4RNO5vsJU=
 		</data>
+		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
+		<data>
+		ooz0sIAaLKBGoFU5iKq8DR11NmY=
+		</data>
+		<key>Frameworks/IDEBundleInjection.framework/Info.plist</key>
+		<data>
+		R/knOPjsjrJNiVtUa2S4kYE749M=
+		</data>
+		<key>Frameworks/IDEBundleInjection.framework/_CodeSignature/CodeResources</key>
+		<data>
+		qcVgsOCxIzxwcNXLWXgRrNjnuT8=
+		</data>
+		<key>Frameworks/IDEBundleInjection.framework/version.plist</key>
+		<data>
+		K7jOt4uC+lqy/StneXlQVk21axY=
+		</data>
 		<key>Frameworks/Mapbox.framework/Assets.car</key>
 		<data>
 		cl6O8RhDAXxGPrHvwItZn10x66I=
@@ -570,6 +586,31 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Frameworks/XCTest.framework/Info.plist</key>
+		<data>
+		CYfyvPIGUR84QvCD7SuNDvG6Bxc=
+		</data>
+		<key>Frameworks/XCTest.framework/XCTest</key>
+		<data>
+		M3EBma1BpAxt7iGIjYcrm9BnNOc=
+		</data>
+		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
+		<data>
+		5EUn1qFgVTwSkfSLCubcLwgrx0c=
+		</data>
+		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TuBj57ZP6zBqcL9HttO2Rucaw9E=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/XCTest.framework/version.plist</key>
+		<data>
+		Etc/8BPenX54rv1uBx24u4bnqTg=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		Yn1CzB9sqJofMngI/0eWP41GOOI=
@@ -577,6 +618,26 @@
 		<key>PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
+		</data>
+		<key>PlugIns/ToursAppTests.xctest.dSYM/Contents/Info.plist</key>
+		<data>
+		VfUCX88CE3bMl3GR5565Oye/Vw4=
+		</data>
+		<key>PlugIns/ToursAppTests.xctest.dSYM/Contents/Resources/DWARF/ToursAppTests</key>
+		<data>
+		7/hz/3WlWZGZmnhMn0kw/S1ReKE=
+		</data>
+		<key>PlugIns/ToursAppTests.xctest/Info.plist</key>
+		<data>
+		/ULozRJjXPyslLEcbyEwxv93LOs=
+		</data>
+		<key>PlugIns/ToursAppTests.xctest/ToursAppTests</key>
+		<data>
+		Q5CkJcJWStwQcQyYsWXiVv6bM1Q=
+		</data>
+		<key>PlugIns/ToursAppTests.xctest/_CodeSignature/CodeResources</key>
+		<data>
+		YV103gWjVbr9Zkac26qa6k/vdNQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -590,6 +651,50 @@
 			<key>hash2</key>
 			<data>
 			iQsgXuyL7S6uN/SnC10LHE89Q6hLJj4/8R2AlV/qjCI=
+			</data>
+		</dict>
+		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ooz0sIAaLKBGoFU5iKq8DR11NmY=
+			</data>
+			<key>hash2</key>
+			<data>
+			QTZkTlnemyTcrFMb3v3GdQcfmpRodaOjtevd5TjxiiY=
+			</data>
+		</dict>
+		<key>Frameworks/IDEBundleInjection.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			R/knOPjsjrJNiVtUa2S4kYE749M=
+			</data>
+			<key>hash2</key>
+			<data>
+			wLDjbULmM78l0rN5jh2/yPax234qVZL29OQBQmdYmOU=
+			</data>
+		</dict>
+		<key>Frameworks/IDEBundleInjection.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qcVgsOCxIzxwcNXLWXgRrNjnuT8=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZARlo4LD/z4nYhaCEocjb6nPjuZDCrLsQzn0n4GVr3s=
+			</data>
+		</dict>
+		<key>Frameworks/IDEBundleInjection.framework/version.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K7jOt4uC+lqy/StneXlQVk21axY=
+			</data>
+			<key>hash2</key>
+			<data>
+			VzM0aDQjkmLy+IyPasdn9DeGkOOTuNMbKUMz+3efAaU=
 			</data>
 		</dict>
 		<key>Frameworks/Mapbox.framework/Assets.car</key>
@@ -1455,6 +1560,118 @@
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>Frameworks/XCTest.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CYfyvPIGUR84QvCD7SuNDvG6Bxc=
+			</data>
+			<key>hash2</key>
+			<data>
+			Xsgm2dBly62EneiB04ryti89smi53XIXAOtYLFyW4ZE=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/XCTest</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			M3EBma1BpAxt7iGIjYcrm9BnNOc=
+			</data>
+			<key>hash2</key>
+			<data>
+			qAlGOWS6ltLA/WrYd4Rz6EHPivttCiNu41NTW7ulBAI=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5EUn1qFgVTwSkfSLCubcLwgrx0c=
+			</data>
+			<key>hash2</key>
+			<data>
+			55ZdMLgNGz7Q67XNAv/M4f4uXy0R2d5+tlHRhlkL8t4=
+			</data>
+		</dict>
+		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TuBj57ZP6zBqcL9HttO2Rucaw9E=
+			</data>
+			<key>hash2</key>
+			<data>
+			89RGkjZaKuewYnjpzwhIswhqfrU8+pcEXqM/DHVrUmo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Frameworks/XCTest.framework/version.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Etc/8BPenX54rv1uBx24u4bnqTg=
+			</data>
+			<key>hash2</key>
+			<data>
+			Jh5i9giCFfo5GhN25CjMKdDJ6Kdlz/p4L95RITR+WeA=
+			</data>
+		</dict>
+		<key>PlugIns/ToursAppTests.xctest.dSYM/Contents/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VfUCX88CE3bMl3GR5565Oye/Vw4=
+			</data>
+			<key>hash2</key>
+			<data>
+			aXDwI9nw5S/0iSpiKSWVAhWIfwE/AxRoOzicUqDMXAQ=
+			</data>
+		</dict>
+		<key>PlugIns/ToursAppTests.xctest.dSYM/Contents/Resources/DWARF/ToursAppTests</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7/hz/3WlWZGZmnhMn0kw/S1ReKE=
+			</data>
+			<key>hash2</key>
+			<data>
+			byLWsNP5829QPEPE2LqJazBPg+SKpZWsKg6W50PJK9E=
+			</data>
+		</dict>
+		<key>PlugIns/ToursAppTests.xctest/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/ULozRJjXPyslLEcbyEwxv93LOs=
+			</data>
+			<key>hash2</key>
+			<data>
+			k9qWZ42n7rTrSGHUo0T6EBcr85KP50TzjKn5zz0bY3I=
+			</data>
+		</dict>
+		<key>PlugIns/ToursAppTests.xctest/ToursAppTests</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Q5CkJcJWStwQcQyYsWXiVv6bM1Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			InkOYm76+SJ6Zs5DGZnlTp7r1EVXIrZrqsa0we6K/FU=
+			</data>
+		</dict>
+		<key>PlugIns/ToursAppTests.xctest/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YV103gWjVbr9Zkac26qa6k/vdNQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			F5mxYFIzKihZoV1SfjTW54GK/DsJvFu/o1PNi1De3/s=
+			</data>
 		</dict>
 	</dict>
 	<key>rules</key>

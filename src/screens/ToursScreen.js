@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import { ScrollView } from 'react-native';
 import { SearchBar, Header, H1  } from 'react-native-elements';
 // import TourCard from '../components/TourCard';
 

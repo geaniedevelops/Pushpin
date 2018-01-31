@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, Modal } from 'react-native';
 import { Container, Content, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
 const Item = Picker.Item;
 
@@ -23,6 +23,8 @@ export default class SignUpForm extends Component {
     render() {
         return (
           <ScrollView style={styles.background}>
+            <Modal
+              >
             <Container>
                 <Content>
                   <Header><H1 style={styles.pagetitle}>Sign Up</H1></Header>
@@ -59,6 +61,7 @@ export default class SignUpForm extends Component {
                     <Button style={styles.button}><Text>Sign Up</Text></Button>
                 </Content>
             </Container>
+          </Modal>
           </ScrollView>
         );
     }
@@ -86,3 +89,10 @@ const styles = StyleSheet.create({
     marginBottom: 20
   }
 });
+
+//LOGIC NOTES
+//SIGN IN/SIGN  UP MODALS:
+// animated='true'
+// visible= 'false'
+// onRequestClose="Logic for submitting new user or logging in current user";
+// appears through logic to determine whether users are already logged in
