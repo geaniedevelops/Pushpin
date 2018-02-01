@@ -1,34 +1,17 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, Modal } from 'react-native';
-import { Container, Content, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
+import { Container, Content, Card, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
 const Item = Picker.Item;
 
 export default class SignUpForm extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedItem: undefined,
-            selected1: 'key0',
-            results: {
-                items: [],
-            },
-        };
-    }
-    onValueChange(value: string) {
-        this.setState({
-            selected1: value,
-        });
-    }
     render() {
         return (
-          <ScrollView style={styles.background}>
             <Modal
+              style={style.modal}
               >
-            <Container>
-                <Content>
-                  <Header><H1 style={styles.pagetitle}>Sign Up</H1></Header>
-                    <List style={styles.form}>
+                <Card>
+                  <H1>Sign Up</H1>
+                    <List>
                         <ListItem>
                             <InputGroup>
                                 <Input inlineLabel label="First Name" placeholder="First Name" />
@@ -58,41 +41,15 @@ export default class SignUpForm extends Component {
                             </InputGroup>
                         </ListItem>
                     </List>
-                    <Button style={styles.button}><Text>Sign Up</Text></Button>
-                </Content>
-            </Container>
-          </Modal>
-          </ScrollView>
+                    <Button><Text>Sign Up</Text></Button>
+                </Card>
+            </Modal>
         );
     }
 };
 
-const styles = StyleSheet.create({
-  background: {
-    backgroundColor: "#C3C48D",
+const style = StyleSheet.create({
+  modal: {
+    padding: 5,
   },
-  pageTitle: {
-    paddingTop: 5
-  },
-  form: {
-    marginTop: 20,
-    marginLeft: 10,
-    marginRight:10,
-    backgroundColor: "#C3C48D",
-    paddingTop:5
-  },
-
-  button: {
-    backgroundColor: "#928C6F",
-    alignSelf: 'center',
-    marginTop: 20,
-    marginBottom: 20
-  }
 });
-
-//LOGIC NOTES
-//SIGN IN/SIGN  UP MODALS:
-// animated='true'
-// visible= 'false'
-// onRequestClose="Logic for submitting new user or logging in current user";
-// appears through logic to determine whether users are already logged in

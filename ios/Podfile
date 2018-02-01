@@ -30,27 +30,46 @@ target 'ToursApp' do
     'RCTLinkingIOS'
   ]
 
-  # Mapbox
-  pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
-
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
 
-  target 'ToursAppTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+ pod 'GoogleMaps'  # Remove this line if you don't want to support Google Maps on iOS
+ pod 'react-native-google-maps', path: '../node_modules/react-native-maps'  # Remove this line if you don't want to support Google Maps on iOS
 end
 
-target 'ToursApp-tvOS' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for toursapp-tvOS
-
-  target 'ToursApp-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+post_install do |installer|
+ installer.pods_project.targets.each do |target|
+   if target.name == 'react-native-google-maps'
+     target.build_configurations.each do |config|
+       config.build_settings['CLANG_ENABLE_MODULES'] = 'No'
+     end
+   end
+   if target.name == "React"
+     target.remove_from_project
+   end
+ end
 end
+
+#   # Mapbox
+#   pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
+#
+#   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+#
+#   target 'ToursAppTests' do
+#     inherit! :search_paths
+#     # Pods for testing
+#   end
+#
+# end
+#
+# target 'ToursApp-tvOS' do
+#   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+#   # use_frameworks!
+#
+#   # Pods for toursapp-tvOS
+#
+#   target 'ToursApp-tvOSTests' do
+#     inherit! :search_paths
+#     # Pods for testing
+#   end
+#
+# end

@@ -1,7 +1,14 @@
 PODS:
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
   - React (0.52.2):
     - React/Core (= 0.52.2)
-  - react-native-mapbox-gl (6.0.3-rc1)
+  - react-native-google-maps (0.19.0):
+    - GoogleMaps (= 2.5.0)
+    - React
   - react-native-maps (0.19.0):
     - React
   - React/Core (0.52.2):
@@ -45,7 +52,8 @@ PODS:
   - yoga (0.52.2.React)
 
 DEPENDENCIES:
-  - react-native-mapbox-gl (from `../node_modules/@mapbox/react-native-mapbox-gl`)
+  - GoogleMaps
+  - react-native-google-maps (from `../node_modules/react-native-maps`)
   - react-native-maps (from `../node_modules/react-native-maps`)
   - React/Core (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -68,19 +76,20 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   React:
     :path: ../node_modules/react-native
-  react-native-mapbox-gl:
-    :path: ../node_modules/@mapbox/react-native-mapbox-gl
+  react-native-google-maps:
+    :path: ../node_modules/react-native-maps
   react-native-maps:
     :path: ../node_modules/react-native-maps
   yoga:
     :path: ../node_modules/react-native/ReactCommon/yoga/Yoga.podspec
 
 SPEC CHECKSUMS:
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   React: 43e97926f429d846050880666de1809e22dd5cc5
-  react-native-mapbox-gl: 99ef75f9c41db4af93513c813cb4591f1c1a35e8
+  react-native-google-maps: 963fc78a5ac32dad3a726e4fa08b5307faa5cab2
   react-native-maps: 066c2afcc89e18726377bcc685315f989ca22449
   yoga: 55da126afc384965b96bff46652464373b330add
 
-PODFILE CHECKSUM: e30696b5fc2264a07b5544fc11158c653c3a74fe
+PODFILE CHECKSUM: 2e2f3f6019b8fa0c329ede77cb80926103692c0b
 
 COCOAPODS: 1.4.0
