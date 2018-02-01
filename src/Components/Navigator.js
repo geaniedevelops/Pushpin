@@ -3,10 +3,10 @@ import { Button, Platform, ScrollView } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 
 //Screens
-import HomeScreen from '../../Screens/Home/HomeScreen';
-import TourScreen from '../../Screens/Tours/TourScreen';
-import MapScreen from '../../Screens/Maps/MapScreen';
-import AccountScreen from '../../Screens/Account/AccountScreen';
+import HomeScreen from '../Screens/Home/HomeScreen';
+import TourScreen from '../Screens/Tours/TourScreen';
+import MapScreen from '../Screens/Maps/MapScreen';
+import AccountScreen from '../Screens/Account/AccountScreen';
 
 const Navigator = DrawerNavigator({
   Home: {

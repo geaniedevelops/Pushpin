@@ -3,7 +3,7 @@ import { Container, Header, Content, Tab, Tabs } from 'native-base';
 import { ScrollView } from 'react-native';
 import Map from './Components/Map';
 import PointList from './Components/PointList';
-import HeaderBar from '../../Components/Common/HeaderBar';
+import HeaderBar from '../../Components/HeaderBar';
 
 export default class MapScreen extends Component {
   render () {
