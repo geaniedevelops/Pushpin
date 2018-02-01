@@ -5,7 +5,6 @@ import { Container, Header, Left, Body, Right, Button, Title, Text } from 'nativ
 export default class HeaderBar extends Component {
   render() {
     return (
-      <Container>
         <Header>
           <Left>
             <Button/>
@@ -19,7 +18,6 @@ export default class HeaderBar extends Component {
             </Button>
           </Right>
         </Header>
-      </Container>
     );
   }
 }

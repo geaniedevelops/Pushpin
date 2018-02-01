@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		vd7zGwvvvitZGse98c4RNO5vsJU=
+		vl816YTgWLP2pYVoA+D3i6mrTK8=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -633,7 +633,7 @@
 		</data>
 		<key>PlugIns/ToursAppTests.xctest/ToursAppTests</key>
 		<data>
-		Q5CkJcJWStwQcQyYsWXiVv6bM1Q=
+		0/US9f6oz4lvQMuNnSTf1cCn2ck=
 		</data>
 		<key>PlugIns/ToursAppTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -646,11 +646,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vd7zGwvvvitZGse98c4RNO5vsJU=
+			vl816YTgWLP2pYVoA+D3i6mrTK8=
 			</data>
 			<key>hash2</key>
 			<data>
-			iQsgXuyL7S6uN/SnC10LHE89Q6hLJj4/8R2AlV/qjCI=
+			fHtHSVR7TRWOAOuHN4tavYnZkiISCf74CzwwEwRshTg=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -1655,11 +1655,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Q5CkJcJWStwQcQyYsWXiVv6bM1Q=
+			0/US9f6oz4lvQMuNnSTf1cCn2ck=
 			</data>
 			<key>hash2</key>
 			<data>
-			InkOYm76+SJ6Zs5DGZnlTp7r1EVXIrZrqsa0we6K/FU=
+			IhqhqpesyHuBSTtKw1Ev3qHRumaxc+GADgsgUuOEkOc=
 			</data>
 		</dict>
 		<key>PlugIns/ToursAppTests.xctest/_CodeSignature/CodeResources</key>
