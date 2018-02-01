@@ -6,7 +6,7 @@ MapboxGL.setAccessToken('pk.eyJ1IjoiZ2VhbmllYmxhbmNvIiwiYSI6ImNqY29jY2ZrYTF5YmEy
 
 const UserCoordinates = [-73.98197650909422, 40.768793007758816];
 
-export default class MapScreen extends Component {
+export default class Map extends Component {
   render () {
     return (
       <View style={{flex: 1}}>

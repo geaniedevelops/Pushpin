@@ -1,13 +1,12 @@
 import React, {Component, StyleSheet} from 'react';
 import { Button, Platform, ScrollView } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
-import TourTabs from './TourTabs';
 
 //Screens
-import HomeScreen from '../../screens/HomeScreen';
-import ToursScreen from '../../screens/ToursScreen';
-import MapScreen from '../../screens/MapScreen';
-import AccountScreen from '../../screens/AccountScreen';
+import HomeScreen from '../../Screens/Home/HomeScreen';
+import TourScreen from '../../Screens/Tours/TourScreen';
+import MapScreen from '../../Screens/Maps/MapScreen';
+import AccountScreen from '../../Screens/Account/AccountScreen';
 
 const Navigator = DrawerNavigator({
   Home: {
@@ -17,7 +16,7 @@ const Navigator = DrawerNavigator({
     screen: MapScreen,
   },
   Tours: {
-    screen: TourTabs,
+    screen: TourScreen,
   },
   Account: {
     screen: AccountScreen,

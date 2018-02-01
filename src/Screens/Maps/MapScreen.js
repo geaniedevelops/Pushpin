@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Tab, Tabs } from 'native-base';
 import { ScrollView } from 'react-native';
-import ToursScreen from '../../screens/ToursScreen';
-import SearchScreen from '../../screens/SearchScreen';
-import HeaderBar from '../HeaderBar';
+import Map from './Components/Map';
+import PointList from './Components/PointList';
+import HeaderBar from '../../Components/Common/HeaderBar';
 
-
-export default class TourTabs extends Component {
-  render() {
+export default class MapScreen extends Component {
+  render () {
     return (
       <ScrollView>
       <Container>
@@ -16,15 +15,15 @@ export default class TourTabs extends Component {
           initialPage={0}
           tabBarPosition="bottom"
           >
-          <Tab heading="My Tours">
-            <ToursScreen/>
+          <Tab heading="Map">
+            <Map/>
           </Tab>
-          <Tab heading="Find Tours">
-            <SearchScreen/>
+          <Tab heading="List">
+            <PointList/>
           </Tab>
         </Tabs>
       </Container>
     </ScrollView>
-    );
+    )
   }
 }
