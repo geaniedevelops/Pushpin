@@ -1,6 +1,7 @@
 import React, {Component, StyleSheet} from 'react';
 import { Button, Platform, ScrollView } from 'react-native';
-import { TabNavigator, DrawerNavigator } from 'react-navigation';
+import { DrawerNavigator } from 'react-navigation';
+import TourTabs from './TourTabs';
 
 //Screens
 import HomeScreen from '../../screens/HomeScreen';
@@ -16,7 +17,7 @@ const Navigator = DrawerNavigator({
     screen: MapScreen,
   },
   Tours: {
-    screen: ToursScreen,
+    screen: TourTabs,
   },
   Account: {
     screen: AccountScreen,
@@ -24,29 +25,3 @@ const Navigator = DrawerNavigator({
 });
 
 export default Navigator;
-
-// class MyHomeScreen extends React.Component {
-//   static navigationOptions = {
-//     drawerLabel: 'Home',
-//   };
-//
-//   render() {
-//     return (
-//       <HomeScreen/>
-//     );
-//   }
-// }
-//
-// class MyNotificationsScreen extends React.Component {
-//   static navigationOptions = {
-//     drawerLabel: 'Notifications',
-//   };
-//
-//   render() {
-//     return (
-//       <Button
-//         onPress={() => this.props.navigation.goBack()}
-//         title="Go back home"/>
-//     );
-//   }
-// }
