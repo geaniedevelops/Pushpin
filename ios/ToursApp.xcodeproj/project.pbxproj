@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -41,6 +40,7 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		CA0EB28C619B76B32D20AC88 /* libPods-ToursAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 545D40F00D37482C6573D4D6 /* libPods-ToursAppTests.a */; };
 		D17B8D7A876619F6D5A4AFA7 /* libPods-ToursApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13FE08F00782CEFDF55C2481 /* libPods-ToursApp-tvOS.a */; };
+		BF4AE894A71D45C8822F3B3B /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 586AA01AF2D447C99D8C1853 /* libRNFirebase.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +302,8 @@
 		B0F95F19775DD81E98B8122D /* libPods-ToursApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToursApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F9ED5BA275B0E7E378013C /* Pods-ToursAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToursAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToursAppTests/Pods-ToursAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF2456385601B40832520CA9 /* Pods-ToursAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToursAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToursAppTests/Pods-ToursAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FF22B6D9CA4440CA5836E31 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; name = "RNFirebase.xcodeproj"; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		586AA01AF2D447C99D8C1853 /* libRNFirebase.a */ = {isa = PBXFileReference; name = "libRNFirebase.a"; path = "libRNFirebase.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				9E2C2C9B8E1DE156093664B6 /* libPods-ToursApp.a in Frameworks */,
+				BF4AE894A71D45C8822F3B3B /* libRNFirebase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +518,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				7FF22B6D9CA4440CA5836E31 /* RNFirebase.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -671,7 +675,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -1307,6 +1311,14 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToursApp.app/ToursApp";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1325,6 +1337,14 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToursApp.app/ToursApp";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
+				);
 			};
 			name = Release;
 		};
@@ -1344,6 +1364,10 @@
 				);
 				PRODUCT_NAME = ToursApp;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1362,6 +1386,10 @@
 				);
 				PRODUCT_NAME = ToursApp;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
+				);
 			};
 			name = Release;
 		};
@@ -1389,6 +1417,14 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1416,6 +1452,14 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
+				);
 			};
 			name = Release;
 		};
@@ -1438,6 +1482,10 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToursApp-tvOS.app/ToursApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Debug;
 		};
@@ -1460,6 +1508,10 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToursApp-tvOS.app/ToursApp-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Release;
 		};
