@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-native';
-import { Container, Content, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
-const Item = Picker.Item;
+import { Container, Content, List, ListItem, InputGroup, Input, Icon, Text, Button, Header, H1, H2, H3} from 'native-base';
+
 
 export default class SignUpForm extends Component {
   render() {

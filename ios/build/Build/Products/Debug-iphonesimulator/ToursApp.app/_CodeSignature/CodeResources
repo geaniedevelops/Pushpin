@@ -1299,7 +1299,7 @@
 		</data>
 		<key>PlugIns/ToursAppTests.xctest.dSYM/Contents/Resources/DWARF/ToursAppTests</key>
 		<data>
-		C6yYMtQim0nRmEGz5Yme2+Igyzs=
+		8F593ySMlYAnkpMAm3Pr99dPYyw=
 		</data>
 		<key>PlugIns/ToursAppTests.xctest/Info.plist</key>
 		<data>
@@ -1307,7 +1307,7 @@
 		</data>
 		<key>PlugIns/ToursAppTests.xctest/ToursAppTests</key>
 		<data>
-		SWTL2VTbDU6S4xWIHYOBUP+/dv8=
+		aYPPLTIAGSiMhmHaabe2Z6xILds=
 		</data>
 		<key>PlugIns/ToursAppTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -3620,11 +3620,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			C6yYMtQim0nRmEGz5Yme2+Igyzs=
+			8F593ySMlYAnkpMAm3Pr99dPYyw=
 			</data>
 			<key>hash2</key>
 			<data>
-			eTUu21+yDlIj1TZPEFa7RG+eavzgNipNWpqm7Ltz2s8=
+			45nAI84nXRKj1Ng169vAHispdhX2r8B9N/KNqvXIR6M=
 			</data>
 		</dict>
 		<key>PlugIns/ToursAppTests.xctest/Info.plist</key>
@@ -3642,11 +3642,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SWTL2VTbDU6S4xWIHYOBUP+/dv8=
+			aYPPLTIAGSiMhmHaabe2Z6xILds=
 			</data>
 			<key>hash2</key>
 			<data>
-			V64giNcZ72JAxv1mfRscYBqW1AW6iaOSj6mb+DM0U5M=
+			zNReEZRIPbsjQpC/71UAmgSrT/iIoUvtcLdvcFuxWtA=
 			</data>
 		</dict>
 		<key>PlugIns/ToursAppTests.xctest/_CodeSignature/CodeResources</key>
