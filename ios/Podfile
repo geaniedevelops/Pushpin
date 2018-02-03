@@ -29,6 +29,8 @@ target 'ToursApp' do
   # Mapbox
   pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
 
+  #Google maps
+
   #firebase
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
