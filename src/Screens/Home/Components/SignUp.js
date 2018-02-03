@@ -49,12 +49,12 @@ export default class SignUpForm extends Component {
           value={this.state.email}
             />
         <Input
-          placeholder='Password'
-          label='Password'
-          secureTextEntry
-          onChangeText={password => this.setState({ password })}
-          value={this.state.password}
-            />
+        placeholder='Password'
+        label='Password'
+        secureTextEntry
+        onChangeText={password => this.setState({ password })}
+        value={this.state.password}
+          />
           <Button>Sign Up</Button>
       </View>
       </ImageBackground>
@@ -67,5 +67,6 @@ const styles = StyleSheet.create({
    flex: 1,
    width: null,
    height: null,
- }
+ },
+
 });

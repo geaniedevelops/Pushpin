@@ -11,7 +11,6 @@ export default class MapScreen extends Component {
     return (
       <ScrollView>
       <Container>
-        <HeaderBar title="Map"/>
         <Tabs
           initialPage={0}
           tabBarPosition="bottom"

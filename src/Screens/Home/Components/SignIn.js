@@ -10,75 +10,25 @@ import firebaseApp from '../../../Utils/Firebase';
 
 export default class SignInForm extends Component {
   state = {
-    email: '',
-    password: '',
-    authenticating: false,
-    user: null,
-    error: '',
-  }
+  email: '',
+  password: '',
+  error: '',
+  loading: false
+};
 
-  componentWillMount() {<firebaseApp/>}
-
-onPressSignIn() {
-    this.setState({
-      authenticating: true,
+onLoginPress() {
+  this.setState({error: '', loading: true});
+  const {email, password} = this.state;
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+    this.setState({error: '', loading: false});
+  }).catch(() => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+      this.setState({error: '', loading: false});
+    }).catch(() => {
+      this.setState({error: 'Authentication failed.', loading: false});
     });
-
-const { firstName, lastName } = this.state;
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(user => this.setState({
-        authenticating: false,
-        user,
-        error: '',
-      }))
-      .catch(() => {
-        // Login was not successful
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(user => this.setState({
-            authenticating: false,
-            user,
-            error: '',
-          }))
-          .catch(() => this.setState({
-            authenticating: false,
-            user: null,
-            error: 'Authentication Failure',
-          }))
-      })
-  }
-
-  onPressLogOut() {
-    firebase.auth().signOut()
-      .then(() => {
-        this.setState({
-          email: '',
-          password: '',
-          authenticating: false,
-          user: null,
-        })
-      }, error => {
-        console.error('Sign Out Error', error);
-      });
-  }
-
-  renderCurrentState() {
-    if (this.state.authenticating) {
-     return (
-       <View>
-         <ActivityIndicator size='large' />
-       </View>
-     )
-   }
-
-   if (this.state.user !== null) {
-     return (
-       <View>
-         <Text>Logged In</Text>
-         <Button onPress={() => this.onPressLogOut()}>Log Out</Button>
-       </View>
-     )
-   }
-  }
+  });
+}
 
   render() {
     return (

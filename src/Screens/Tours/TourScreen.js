@@ -11,8 +11,6 @@ export default class TourTabs extends Component {
     return (
       <ScrollView>
           <Container>
-          <HeaderBar
-            title="Tours"/>
             <Tabs
             initialPage={0}
             tabBarPosition="bottom">
