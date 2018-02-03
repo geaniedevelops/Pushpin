@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, Modal } from 'react-native';
 import { Container, Content, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
+import firebase from 'react-native-firebase';
 const Item = Picker.Item;
 
 export default class SignUpForm extends Component {
