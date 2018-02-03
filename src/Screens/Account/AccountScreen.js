@@ -5,16 +5,11 @@ import HeaderBar from '../../Components/HeaderBar';
 
 
 export default class AccountScreen extends React.Component {
-  static navigationOptions = {
-    header: null
-  };
-
   render() {
     return (
       <View>
-        <Card>
-          <Text>Future Home of Settings</Text>
-        </Card>
-      </View>)
+        <HeaderBar title="Account"/>
+      </View>
+    )
   }
 }

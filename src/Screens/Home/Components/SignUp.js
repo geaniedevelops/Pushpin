@@ -1,98 +1,71 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, Modal } from 'react-native';
-import { Container, Content, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
-const Item = Picker.Item;
+import * as firebase from 'firebase';
+import { View, ImageBackground, StyleSheet } from 'react-native';
+// import { List, ListItem, InputGroup, Input, Text, Button } from 'native-base';
+import Input from './Input';
+import Button from './Button';
+import firebaseApp from '../../../Utils/Firebase';
+
 
 export default class SignUpForm extends Component {
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    authenticating: false,
+    user: null,
+    error: '',
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedItem: undefined,
-            selected1: 'key0',
-            results: {
-                items: [],
-            },
-        };
-    }
-    onValueChange(value: string) {
-        this.setState({
-            selected1: value,
-        });
-    }
-    render() {
-        return (
-          <ScrollView style={styles.background}>
-            <Modal
-              >
-            <Container>
-                <Content>
-                  <Header><H1 style={styles.pagetitle}>Sign Up</H1></Header>
-                    <List style={styles.form}>
-                        <ListItem>
-                            <InputGroup>
-                                <Input inlineLabel label="First Name" placeholder="First Name" />
-                            </InputGroup>
-                        </ListItem>
+  componentWillMount() {
+    <firebaseApp/>;
+  }
 
-                        <ListItem>
-                            <InputGroup>
-                                <Input inlineLabel label="Last Name" placeholder="Last Name" />
-                            </InputGroup>
-                        </ListItem>
 
-                        <ListItem>
-                            <InputGroup>
-                                <Input placeholder="Email" />
-                            </InputGroup>
-                        </ListItem>
-                        <ListItem>
-                            <InputGroup>
-                                <Input placeholder="Password" secureTextEntry />
-                            </InputGroup>
-                        </ListItem>
-
-                        <ListItem>
-                            <InputGroup>
-                                <Input placeholder="Phone Number" keyboardType="numeric" />
-                            </InputGroup>
-                        </ListItem>
-                    </List>
-                    <Button style={styles.button}><Text>Sign Up</Text></Button>
-                </Content>
-            </Container>
-          </Modal>
-          </ScrollView>
-        );
-    }
-};
+  render() {
+    return (
+      <ImageBackground
+        source={require("../../../Assets/images/bggradient.jpg")}
+        style={styles.image}
+        >
+      <View>
+        <Input
+          placeholder='First Name'
+          label='First Name'
+          onChangeText={firstName => this.setState({ firstName })}
+          value={this.state.firstName}
+          />
+        <Input
+          placeholder='Last Name'
+          label='Last Name'
+          onChangeText={lastName => this.setState({ lastName })}
+          value={this.state.lastName}
+          />
+        <Input
+          placeholder='Email Address'
+          label='Email'
+          onChangeText={email => this.setState({ email })}
+          value={this.state.email}
+            />
+        <Input
+          placeholder='Password'
+          label='Password'
+          secureTextEntry
+          onChangeText={password => this.setState({ password })}
+          value={this.state.password}
+            />
+          <Button>Sign Up</Button>
+      </View>
+      </ImageBackground>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  background: {
-    backgroundColor: "#C3C48D",
-  },
-  pageTitle: {
-    paddingTop: 5
-  },
-  form: {
-    marginTop: 20,
-    marginLeft: 10,
-    marginRight:10,
-    backgroundColor: "#C3C48D",
-    paddingTop:5
-  },
-
-  button: {
-    backgroundColor: "#928C6F",
-    alignSelf: 'center',
-    marginTop: 20,
-    marginBottom: 20
-  }
+ image: {
+   flex: 1,
+   width: null,
+   height: null,
+ }
 });
-
-//LOGIC NOTES
-//SIGN IN/SIGN  UP MODALS:
-// animated='true'
-// visible= 'false'
-// onRequestClose="Logic for submitting new user or logging in current user";
-// appears through logic to determine whether users are already logged in
