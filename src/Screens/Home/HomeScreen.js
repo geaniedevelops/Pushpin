@@ -1,6 +1,6 @@
 import React, { Component, url } from 'react';
-import { View, StyleSheet, ScrollView, ImageBackground, Image } from 'react-native';
-import { Text, Container, Card } from 'native-base';
+import { View, StyleSheet, ScrollView, ImageBackground, Image, Navigate } from 'react-native';
+import { Text, Container, Card, Tab, Tabs } from 'native-base';
 import { Button } from 'react-native-elements';
 // import TourCard from '../../Components/TourCard';
 // import SignInForm from './Components/SignInForm';
@@ -8,7 +8,7 @@ import HeaderBar from '../../Components/HeaderBar';
 import BackgroundImage from '../../Components/BackgroundImage';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import SignUpForm from './Components/SignUp';
-import SignInForm from './Components/SignInForm';
+import SignInForm from './Components/SignIn';
 
 
 export default class HomeScreen extends Component {
@@ -21,22 +21,18 @@ export default class HomeScreen extends Component {
         >
         <View
           style={styles.view}>
-          <Image
-            source={require('../../Assets/images/homepageplaceholder.png')}
-            style={styles.logo}
-            />
-          <Button
-            outline
-            raised
-            style={styles.button}
-            onPress={()=>SignInForm.openModal}
-            title='Sign In'/>
-          <Button
-            outline
-            raised
-            style={styles.button}
-            onPress={()=>SignUpForm.openModal}
-            title='Sign Up'/>
+          <Container>
+            <Tabs
+            initialPage={0}
+            tabBarPosition="bottom">
+            <Tab heading="Sign In">
+              <SignInForm/>
+            </Tab>
+            <Tab heading="Sign Up">
+              <SignUpForm/>
+            </Tab>
+        </Tabs>
+        </Container>
         </View>
       </ImageBackground>
     );
@@ -63,6 +59,22 @@ const styles = StyleSheet.create({
   }
 });
 
+// <Image
+//   source={require('../../Assets/images/homepageplaceholder.png')}
+//   style={styles.logo}
+//   />
+// <Button
+//   outline
+//   raised
+//   style={styles.button}
+//   onPress={()=>Navigate('./Components/SignInForm')}
+//   title='Sign In'/>
+// <Button
+//   outline
+//   raised
+//   style={styles.button}
+//   onPress={()=>Navigate('./Components/SignUpForm')}
+//   title='Sign Up'/>
 
 
 

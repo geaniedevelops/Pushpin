@@ -14,7 +14,7 @@ export default class TourCard extends Component {
             <H1>GALAXY TOUR</H1>
             <Grid>
                 <Col size={30}>
-                  <Avatar
+                  <Image
                    large
                    source={require("../Assets/images/dontpanic.png")}
                    onPress={() => alert("Works!")}

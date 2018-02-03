@@ -31,6 +31,7 @@ target 'ToursApp' do
 
   #firebase
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 end
 
 post_install do |installer|
