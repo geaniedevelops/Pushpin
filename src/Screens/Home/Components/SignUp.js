@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, Modal } from 'react-native';
 import { Container, Content, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
 import firebase from 'react-native-firebase';
+import { StackNavigator } from 'react-navigation';
 const Item = Picker.Item;
 
 export default class SignUpForm extends Component {
@@ -9,17 +10,25 @@ export default class SignUpForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedItem: undefined,
-            selected1: 'key0',
-            results: {
-                items: [],
-            },
-        };
+            email: "",
+            password: "",
+            firstName: "",
+            lastName: "",
+            phoneNumber: ""
+        }
     }
-    onValueChange(value: string) {
-        this.setState({
-            selected1: value,
-        });
+
+    onRegister() {
+  const { email, password, firstName, lastName, phoneNumber } = this.state;
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((user) => {
+        this.props.navigation.navigate('HomeScreen')
+        // Need to add: something to save the user object
+    })
+    .catch((error) => {
+      const { code, message } = error;
+    });
+}
 
     
 
@@ -35,34 +44,60 @@ export default class SignUpForm extends Component {
                     <List style={styles.form}>
                         <ListItem>
                             <InputGroup>
-                                <Input inlineLabel label="First Name" placeholder="First Name" />
+                                <Input 
+                                value={this.state.firstName}
+                                onChangeText={(text) => this.setState({firstName: text})}
+                                inlineLabel label="First Name" 
+                                placeholder="First Name" 
+                                />
                             </InputGroup>
                         </ListItem>
 
                         <ListItem>
                             <InputGroup>
-                                <Input inlineLabel label="Last Name" placeholder="Last Name" />
+                                <Input 
+                                value={this.state.lastName}
+                                onChangeText={(text) => this.setState({lastName: text})}
+                                inlineLabel label="Last Name" 
+                                placeholder="Last Name" 
+                                />
                             </InputGroup>
                         </ListItem>
 
                         <ListItem>
                             <InputGroup>
-                                <Input placeholder="Email" />
+                                <Input 
+                                value={this.state.email}
+                                onChangeText={(text) => this.setState({email: text})}
+                                placeholder="Email address"
+                                />
                             </InputGroup>
                         </ListItem>
                         <ListItem>
                             <InputGroup>
-                                <Input placeholder="Password" secureTextEntry />
+                                <Input 
+                                value={this.state.password}
+                                onChangeText={(text) => this.setState({password: text})}
+                                placeholder="Password" 
+                                secureTextEntry />
                             </InputGroup>
                         </ListItem>
 
                         <ListItem>
                             <InputGroup>
-                                <Input placeholder="Phone Number" keyboardType="numeric" />
+                                <Input 
+                                value={this.state.phoneNumber}
+                                onChangeText={(text) => this.setState({phoneNumber: text})}
+                                placeholder="Phone Number" 
+                                keyboardType="numeric" 
+                                />
                             </InputGroup>
                         </ListItem>
                     </List>
-                    <Button style={styles.button}><Text>Sign Up</Text></Button>
+                    <Button 
+                    style={styles.button}
+                    onPress={this.onRegister}
+                    ><Text>Sign Up</Text></Button>
                 </Content>
             </Container>
           </Modal>

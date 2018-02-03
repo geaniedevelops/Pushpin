@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, ScrollView, Modal } from 'react-native';
 import { Container, Content, List, ListItem, InputGroup, Input, Text, Button, Header, H1} from 'native-base';
 import firebase from 'react-native-firebase';
+import { StackNavigator } from 'react-navigation';
 
 export default class SignInForm extends Component {
 
@@ -13,19 +14,16 @@ export default class SignInForm extends Component {
         }
     }
 
-    handleInputChange(event) {
-
-        const { name, value } = event.target;
-
-        this.setState({
-          [name]: value
-      });
+    gotoSignUp() {
+        // Navigate to sign up, think it might need to be its own screen?
     }
 
 onLogin() {
   const { email, password } = this.state;
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((user) => {
+    this.props.navigation.navigate('HomeScreen')
+});
   })
   .catch((error) => {
       const { code, message } = error;
@@ -43,9 +41,7 @@ onLogin() {
       <InputGroup>
       <Input 
       value={this.state.email}
-      name="email"
-      onChange={this.handleInputChange}
-      type="text"
+      onChangeText={(text) => this.setState({email: text})}
       placeholder="Email address"
       />
       </InputGroup>
@@ -54,14 +50,20 @@ onLogin() {
       <InputGroup>
       <Input 
       value={this.state.password}
-      name="password"
-      onChange={this.handleInputChange}
+      onChangeText={(text) => this.setState({password: text})}
       placeholder="Password" 
       secureTextEntry />
       </InputGroup>
       </ListItem>
       </List>
-      <Button style={styles.button}><Text>Sign In</Text></Button>
+      <Button 
+      style={styles.button}
+      onPress={this.onLogin}
+      ><Text>Sign In</Text></Button>
+    <Button 
+      style={styles.button}
+      onPress={this.gotoSignUp}
+      ><Text>New User? Sign Up</Text></Button>
       </Content>
       </Container>
       </Modal>
