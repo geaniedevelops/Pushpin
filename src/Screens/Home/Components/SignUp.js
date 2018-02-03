@@ -19,6 +19,9 @@ export default class SignUpForm extends Component {
         this.setState({
             selected1: value,
         });
+
+    
+
     }
     render() {
         return (
