@@ -2,6 +2,8 @@ import React, { Component, url } from 'react';
 import { View, StyleSheet, ScrollView, ImageBackground, Image } from 'react-native';
 import { Text, Container, Card } from 'native-base';
 import { Button } from 'react-native-elements';
+// import TourCard from '../../Components/TourCard';
+// import SignInForm from './Components/SignInForm';
 import HeaderBar from '../../Components/HeaderBar';
 import BackgroundImage from '../../Components/BackgroundImage';
 import { Col, Row, Grid } from 'react-native-easy-grid';

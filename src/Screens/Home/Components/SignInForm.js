@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Modal } from 'react-native';
 import { List, ListItem, InputGroup, Input, Text, Button } from 'native-base';
 
+
 export default class SignInForm extends Component {
   render() {
     return (
