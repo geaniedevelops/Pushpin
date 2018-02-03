@@ -1,10 +1,13 @@
 CLANG_CXX_LANGUAGE_STANDARD = c++14
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/React
-FRAMEWORK_SEARCH_PATHS = $(inherited)  "$(PLATFORM_DIR)/Developer/Library/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+<<<<<<< HEAD
 HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/React" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GoogleMaps" "${PODS_ROOT}/Headers/Public/React" "${PODS_ROOT}/Headers/Public/react-native-google-maps" "${PODS_ROOT}/Headers/Public/react-native-maps" "${PODS_ROOT}/Headers/Public/yoga" "$(PODS_TARGET_SRCROOT)/ReactCommon"
+=======
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/React" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Firebase" "${PODS_ROOT}/Headers/Public/FirebaseAnalytics" "${PODS_ROOT}/Headers/Public/FirebaseAuth" "${PODS_ROOT}/Headers/Public/FirebaseCore" "${PODS_ROOT}/Headers/Public/FirebaseInstanceID" "${PODS_ROOT}/Headers/Public/GTMSessionFetcher" "${PODS_ROOT}/Headers/Public/GoogleMaps" "${PODS_ROOT}/Headers/Public/GoogleToolboxForMac" "${PODS_ROOT}/Headers/Public/React" "${PODS_ROOT}/Headers/Public/nanopb" "${PODS_ROOT}/Headers/Public/react-native-google-maps" "${PODS_ROOT}/Headers/Public/react-native-mapbox-gl" "${PODS_ROOT}/Headers/Public/react-native-maps" "${PODS_ROOT}/Headers/Public/yoga" "$(PODS_TARGET_SRCROOT)/ReactCommon"
+>>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/yoga"
-OTHER_LDFLAGS = -l"stdc++" -framework "JavaScriptCore" -framework "XCTest"
+OTHER_LDFLAGS = -l"stdc++" -framework "JavaScriptCore"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}

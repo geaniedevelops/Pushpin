@@ -4,6 +4,19 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+<<<<<<< HEAD
+=======
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+>>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
 		<key>Pods-ToursApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -11,7 +24,21 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+<<<<<<< HEAD
 		<key>react-native-google-maps.xcscheme</key>
+=======
+		<key>nanopb.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>react-native-google-maps.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>react-native-mapbox-gl.xcscheme</key>
+>>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
 		<dict>
 			<key>isShown</key>
 			<false/>

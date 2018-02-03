@@ -1,35 +1,27 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+# platform :ios, '9.0'
 
 target 'ToursApp' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+  rn_path = '../node_modules/react-native'
+  rn_maps_path = '../node_modules/react-native-maps'
 
-  # Pods for demo
-  # Flexbox Layout Manager Used By React Natve
-  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
-
-  # React Native
-  pod 'React', path: '../node_modules/react-native', subspecs: [
-    # Comment out any unneeded subspecs to reduce bundle size.
+  pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
+  pod 'React', path: rn_path, subspecs: [
     'Core',
-    'DevSupport',
     'RCTActionSheet',
     'RCTAnimation',
-    'RCTBlob',
-    'RCTCameraRoll',
     'RCTGeolocation',
     'RCTImage',
+    'RCTLinkingIOS',
     'RCTNetwork',
-    'RCTPushNotification',
     'RCTSettings',
-    'RCTTest',
     'RCTText',
     'RCTVibration',
     'RCTWebSocket',
-    'RCTLinkingIOS'
+    'BatchedBridge'
   ]
 
+<<<<<<< HEAD
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
 
  pod 'GoogleMaps'  # Remove this line if you don't want to support Google Maps on iOS
@@ -47,6 +39,32 @@ post_install do |installer|
      target.remove_from_project
    end
  end
+=======
+  pod 'react-native-maps', path: rn_maps_path
+
+  pod 'GoogleMaps'  # Remove this line if you don't want to support Google Maps on iOS
+  pod 'react-native-google-maps', path: rn_maps_path  # Remove this line if you don't want to support Google Maps on iOS
+
+  # Mapbox
+  pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
+
+  #firebase
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == 'react-native-google-maps'
+      target.build_configurations.each do |config|
+        config.build_settings['CLANG_ENABLE_MODULES'] = 'No'
+      end
+    end
+    if target.name == "React"
+      target.remove_from_project
+    end
+  end
+>>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
 end
 
 #   # Mapbox
