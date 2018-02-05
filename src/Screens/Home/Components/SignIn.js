@@ -1,22 +1,32 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import { View, ImageBackground, StyleSheet } from 'react-native';
+import { View, Image, Text } from 'react-native';
 // import { Button } from 'native-base';
 // import { FirebaseApp, firebaseConfig } from '../../../Utils/Firebase';
-import Input from './Input';
-import Button from './Button';
+// import Input from './Input';
+import { Button, Input } from 'native-base';
 import firebaseApp from '../../../Utils/Firebase';
 
 
 export default class SignInForm extends Component {
-  state = {
-  email: '',
-  password: '',
-  error: '',
-  loading: false
-};
+  constructor() {
+    super()
+    this.state = {
+      firstName: 'New User',
+      lastName: 'New User',
+      email: 'New User',
+      password: 'New User',
+      authenticating: false,
+      user: null,
+      error: '',
+    }
+  }
 
-onLoginPress() {
+  componentWillMount() {
+    <firebaseApp/>;
+  }
+
+  onLoginPress() {
   this.setState({error: '', loading: true});
   const {email, password} = this.state;
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
@@ -28,14 +38,11 @@ onLoginPress() {
       this.setState({error: 'Authentication failed.', loading: false});
     });
   });
-}
+  }
+
 
   render() {
     return (
-      <ImageBackground
-        source={require("../../../Assets/images/bggradient.jpg")}
-        style={styles.image}
-        >
         <View>
           <Input
             placeholder='Email Address'
@@ -50,17 +57,8 @@ onLoginPress() {
             onChangeText={password => this.setState({ password })}
             value={this.state.password}
             />
-          <Button>Sign In</Button>
+          <Button round info><Text>Sign In</Text></Button>
         </View>
-      </ImageBackground>
     );
   }
 }
-
-const styles = StyleSheet.create({
- image: {
-   flex: 1,
-   width: null,
-   height: null,
- }
-});

@@ -39,6 +39,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8835DF88202315880017C6D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8835DF87202315880017C6D6 /* GoogleService-Info.plist */; };
 		8835DF89202315880017C6D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8835DF87202315880017C6D6 /* GoogleService-Info.plist */; };
+		885046882027DCBD00ED9B44 /* splashscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 885046872027DCBD00ED9B44 /* splashscreen.jpg */; };
 		971A3D8D536D4D3E97143C50 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA63C7B318648B6BA8D8A24 /* libc++.tbd */; };
 		9E2C2C9B8E1DE156093664B6 /* libPods-ToursApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F95F19775DD81E98B8122D /* libPods-ToursApp.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -359,6 +360,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8835DF87202315880017C6D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		885046872027DCBD00ED9B44 /* splashscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = splashscreen.jpg; path = ../Design/splashscreen.jpg; sourceTree = "<group>"; };
 		912A65347C2D2F9E6B5B76A1 /* libPods-ToursApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToursApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB1785B6CA24F6B9CF0B489 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
 		ABA63C7B318648B6BA8D8A24 /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -607,6 +609,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				885046872027DCBD00ED9B44 /* splashscreen.jpg */,
 				13B07FAE1A68108700A75B9A /* ToursApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ToursAppTests */,
@@ -1125,6 +1128,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				885046882027DCBD00ED9B44 /* splashscreen.jpg in Resources */,
 				8835DF88202315880017C6D6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1353,6 +1357,7 @@
 			baseConfigurationReference = B01466790EB551E6D4998B97 /* Pods-ToursApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
@@ -1376,6 +1381,7 @@
 			baseConfigurationReference = 65689799DA348952B2E1CAD8 /* Pods-ToursApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

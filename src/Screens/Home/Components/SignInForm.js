@@ -24,75 +24,63 @@ onLogin() {
   .then((user) => {
     this.props.navigation.navigate('HomeScreen')
 });
-  })
-  .catch((error) => {
-      const { code, message } = error;
+  }.catch((error) => {
+    const { code, message } = error;
   });
 
   render() {
     return (
       <ScrollView style={styles.background}>
-      <Modal>
-      <Container>
-      <Content>
-      <Header><H1 style={styles.pagetitle}>Sign In</H1></Header>
-      <List style={styles.form}>
-      <ListItem>
-      <InputGroup>
-      <Input
-      value={this.state.email}
-      onChangeText={(text) => this.setState({email: text})}
-      placeholder="Email address"
-      />
-      </InputGroup>
-      </ListItem>
-      <ListItem>
-      <InputGroup>
-      <Input
-      value={this.state.password}
-      onChangeText={(text) => this.setState({password: text})}
-      placeholder="Password"
-      secureTextEntry />
-      </InputGroup>
-      </ListItem>
-      </List>
-      <Button
-      style={styles.button}
-      onPress={this.onLogin}
-      ><Text>Sign In</Text></Button>
-    <Button
-      style={styles.button}
-      onPress={this.gotoSignUp}
-      ><Text>New User? Sign Up</Text></Button>
-      </Content>
-      </Container>
-      </Modal>
+        <Modal>
+          <Container>
+            <Content>
+              <Header><H1 style={styles.pagetitle}>Sign In</H1></Header>
+                <List style={styles.form}>
+                  <ListItem>
+                    <InputGroup>
+                    <Input
+                    value={this.state.email}
+                    onChangeText={(text) => this.setState({email: text})}
+                    placeholder="Email address"
+                    />
+                    </InputGroup>
+                  </ListItem>
+                  <ListItem>
+                    <InputGroup>
+                    <Input
+                    value={this.state.password}
+                    onChangeText={(text) => this.setState({password: text})}
+                    placeholder="Password"
+                    secureTextEntry />
+                    </InputGroup>
+                  </ListItem>
+                </List>
+                <Button rounded info
+                  >
+                  <Text>Sign In</Text>
+                </Button>
+            </Content>
+          </Container>
+        </Modal>
       </ScrollView>
       );
 }
 };
 
-const styles = StyleSheet.create({
-  background: {
-    backgroundColor: "#C3C48D",
-},
-pageTitle: {
-    paddingTop: 5
-},
-form: {
-    marginTop: 20,
-    marginLeft: 10,
-    marginRight:10,
-    backgroundColor: "#C3C48D",
-    paddingTop:5
-},
-
-button: {
-    backgroundColor: "#928C6F",
-    alignSelf: 'center',
-    marginTop: 20,
-    marginBottom: 20
-}
-});
-
-}
+// const styles = StyleSheet.create({
+//   background: {
+//     backgroundColor: "#C3C48D",
+// },
+// pageTitle: {
+//     paddingTop: 5
+// },
+// form: {
+//     marginTop: 20,
+//     marginLeft: 10,
+//     marginRight:10,
+//     backgroundColor: "#C3C48D",
+//     paddingTop:5
+// }
+// });
+//
+// }

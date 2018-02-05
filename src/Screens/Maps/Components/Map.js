@@ -29,7 +29,8 @@ export default class App extends Component<{}> {
             zoomLevel={15}
             centerCoordinate={[11.256, 43.770]}
             style={styles.container}
-            showUserLocation={true}>
+            showUserLocation={true}
+            logo={false}>
             {this.renderAnnotations()}
         </Mapbox.MapView>
       </View>
