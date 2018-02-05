@@ -16,18 +16,19 @@ export default class HomeScreen extends Component {
       <ImageBackground
         source={require('../../Assets/images/mapbackground.png')}
         style={styles.image}>
-        <Grid>
+        <Grid
+          style={styles.form}>
           <Row size={3}>
             <Image
               source={require('../../Assets/images/pushpin.png')}
               style={styles.icon}/>
           </Row>
           <Row size= {2}>
-            <SignInForm
-              style={styles.form}/>
+            <SignInForm/>
           </Row>
           <Row size={1}>
-            <SignUpForm/>
+            <SignUpForm
+              style={styles.SUform}/>
           </Row>
         </Grid>
       </ImageBackground>
@@ -36,54 +37,24 @@ export default class HomeScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  button: {
-    paddingTop:20,
-    flex:1
-  },
-  view: {
-    flex: 2,
-  },
   image: {
     flex: 1,
     width: null,
     height: null,
     justifyContent: 'center',
+    alignContent: 'center'
   },
   form: {
-    flex: 1
+    alignContent: 'center',
+    justifyContent: 'center',
+    padding: 10
   },
   icon: {
-    height:100,
-    width:100
+    height:400,
+    width:400,
+    flex:2
+  },
+  SUform: {
+    paddingTop: 10
   }
 });
-
-// <Image
-//   source={require('../../Assets/images/homepageplaceholder.png')}
-//   style={styles.logo}
-//   />
-// <Button
-//   outline
-//   raised
-//   style={styles.button}
-//   onPress={()=>Navigate('./Components/SignInForm')}
-//   title='Sign In'/>
-// <Button
-//   outline
-//   raised
-//   style={styles.button}
-//   onPress={()=>Navigate('./Components/SignUpForm')}
-//   title='Sign Up'/>
-
-
-
-//Component Loads with All/Trending Tours
-////componentDidMount() {
-//// this.setState({
-////    dataSource: 'all-tours';
-////  })
-////}
-//
-// <HeaderBar
-//   title={'Home'}
-//   />

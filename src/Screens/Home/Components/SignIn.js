@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, StyleSheet } from 'react-native';
 // import { Button } from 'native-base';
 // import { FirebaseApp, firebaseConfig } from '../../../Utils/Firebase';
 // import Input from './Input';
@@ -12,10 +12,8 @@ export default class SignInForm extends Component {
   constructor() {
     super()
     this.state = {
-      firstName: 'New User',
-      lastName: 'New User',
-      email: 'New User',
-      password: 'New User',
+      email: '',
+      password: '',
       authenticating: false,
       user: null,
       error: '',
@@ -43,12 +41,14 @@ export default class SignInForm extends Component {
 
   render() {
     return (
-        <View>
+        <View
+          style={styles.view}>
           <Input
             placeholder='Email Address'
             label='Email'
             onChangeText={email => this.setState({ email })}
             value={this.state.email}
+            style={styles.form}
             />
           <Input
             placeholder='Password'
@@ -56,9 +56,31 @@ export default class SignInForm extends Component {
             secureTextEntry
             onChangeText={password => this.setState({ password })}
             value={this.state.password}
+            style={styles.form}
             />
-          <Button round info><Text>Sign In</Text></Button>
+          <Button
+            round
+            info
+            style={styles.button}>
+            <Text>Sign In</Text>
+          </Button>
         </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    backgroundColor: "#FEFAEC",
+    paddingTop:10
+  },
+  button: {
+    flex: 2,
+    width: 350
+  },
+  form: {
+    flex: 4,
+    width: 350
+  }
+});

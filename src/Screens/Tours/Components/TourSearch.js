@@ -17,9 +17,8 @@ export default class SearchScreen extends React.Component {
   render() {
     return (
       <ImageBackground
-        source={require("../../../Assets/images/bggradient.jpg")}
-        style={styles.image}
-        >
+        source={require('../../../Assets/images/mapbackground.png')}
+        style={styles.image}>
       <Text>Hello World!</Text>
       </ImageBackground>
     )
