@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>LastAccessedDate</key>
+<<<<<<< HEAD
+	<date>2018-02-05T20:00:15Z</date>
+=======
 	<date>2018-02-01T06:26:33Z</date>
+>>>>>>> 311751c0ea18207e1ffa65ef8e23cce82917658d
 	<key>WorkspacePath</key>
 	<string>/Users/geanie/Desktop/Docs/Projects/ToursApp/ios/ToursApp.xcworkspace</string>
 </dict>

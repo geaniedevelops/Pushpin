@@ -1,40 +1,55 @@
 import React, { Component } from 'react';
-import { Image, Text, View } from 'react-native';
-import { Card, Container, Content, H1, Thumbnail } from 'native-base';
-import { Avatar } from 'react-native-elements';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Image } from 'react-native';
+import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+
 
 export default class TourCard extends Component {
-  render () {
+  constructor(){
+  super()
+  this.state = {
+    tourTitle: 'tour.title',
+    tourLocation: 'tour.location',
+    tourDescription: 'tour.description',
+    tourPrice: 'tour.price',
+    tourImage: 'tour.image',
+    pointNumber: 'tour.pointNumber'
+  }
+}
+  render() {
     return (
-        <Container>
-          <Content>
-            <Card>
-            <H1>GALAXY TOUR</H1>
-            <Grid>
-<<<<<<< HEAD
-                <Col size={35}>
-                  <Image  />
-=======
-                <Col size={30}>
-                  <Image
-                   large
-                   source={require("../Assets/images/dontpanic.png")}
-                   onPress={() => alert("Works!")}
-                   activeOpacity={0.7}
-                   imageProps={{
-                     resizeMode:'contain'
-                   }}
-                  />
->>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
-                </Col>
-                <Col size={65}>
-                  <Text>In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.</Text>
-                </Col>
-            </Grid>
+      <Container>
+        <Content>
+          <Card style={{flex: 0}}>
+            <CardItem>
+              <Left>
+                <Body>
+                  <Text>{this.state.tourTitle}</Text>
+                  <Text note>{this.state.tourLocation}</Text>
+                </Body>
+              </Left>
+            </CardItem>
+
+            <CardItem>
+              <Body>
+                <Image source={require('../Assets/images/NYCtour.jpeg')} style={{height: 200, width: 200, flex: 1}}/>
+                <Text>{this.state.tourDescription}</Text>
+              </Body>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent textStyle={{color: '#87838B'}}>
+                  <Text>{this.state.tourPrice}</Text>
+                </Button>
+              </Left>
+              <Right>
+                <Button transparent textStyle={{color: '#87838B'}}>
+                <Text>Start Tour</Text>
+                </Button>
+              </Right>
+            </CardItem>
           </Card>
         </Content>
       </Container>
-    )
-  }
+    );
+}
 }

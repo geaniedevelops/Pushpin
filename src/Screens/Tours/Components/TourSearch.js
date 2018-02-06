@@ -1,26 +1,18 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, ImageBackground, StyleSheet } from 'react-native';
 import SearchCard from '../../../Components/SearchCard';
-
-//Component Loads with All Tours
-////componentDidMount() {
-//// this.setState({
-////    dataSource: 'all-tours';
-////  })
-////}
-
-//on click: SearchForm Modal
-
-//Component Unmounts / Remounts with queried TourCards
+import SearchForm from './SearchForm';
 
 export default class SearchScreen extends React.Component {
   render() {
     return (
       <ImageBackground
-        source={require("../../../Assets/images/bggradient.jpg")}
-        style={styles.image}
-        >
-      <Text>Hello World!</Text>
+        source={require('../../../Assets/images/mapbackground.png')}
+        style={styles.image}>
+      <SearchForm
+        style={styles.form}/>
+      <SearchCard
+        style={styles.card}/>
       </ImageBackground>
     )
   }
@@ -31,5 +23,11 @@ const styles = StyleSheet.create({
    flex: 1,
    width: null,
    height: null,
+ },
+ form: {
+   flex: 1
+ },
+ card: {
+   flex: 5
  }
 });

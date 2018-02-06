@@ -59,6 +59,7 @@
 =======
 		8835DF88202315880017C6D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8835DF87202315880017C6D6 /* GoogleService-Info.plist */; };
 		8835DF89202315880017C6D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8835DF87202315880017C6D6 /* GoogleService-Info.plist */; };
+		885046882027DCBD00ED9B44 /* splashscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 885046872027DCBD00ED9B44 /* splashscreen.jpg */; };
 		971A3D8D536D4D3E97143C50 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA63C7B318648B6BA8D8A24 /* libc++.tbd */; };
 		9E2C2C9B8E1DE156093664B6 /* libPods-ToursApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F95F19775DD81E98B8122D /* libPods-ToursApp.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -454,7 +455,11 @@
 		88843A232022E8D600FE917A /* DummyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyView.h; sourceTree = "<group>"; };
 =======
 		8835DF87202315880017C6D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		885046872027DCBD00ED9B44 /* splashscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = splashscreen.jpg; path = ../Design/splashscreen.jpg; sourceTree = "<group>"; };
+=======
 >>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
+>>>>>>> 311751c0ea18207e1ffa65ef8e23cce82917658d
 		912A65347C2D2F9E6B5B76A1 /* libPods-ToursApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToursApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB1785B6CA24F6B9CF0B489 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
 		ABA63C7B318648B6BA8D8A24 /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -714,7 +719,11 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				885046872027DCBD00ED9B44 /* splashscreen.jpg */,
+=======
 				888439FD2022E8D600FE917A /* AirGoogleMaps */,
+>>>>>>> 311751c0ea18207e1ffa65ef8e23cce82917658d
 				13B07FAE1A68108700A75B9A /* ToursApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ToursAppTests */,
@@ -1339,6 +1348,7 @@
 <<<<<<< HEAD
 =======
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				885046882027DCBD00ED9B44 /* splashscreen.jpg in Resources */,
 				8835DF88202315880017C6D6 /* GoogleService-Info.plist in Resources */,
 >>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
 			);

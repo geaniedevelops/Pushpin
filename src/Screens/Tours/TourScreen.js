@@ -9,10 +9,13 @@ import HeaderBar from '../../Components/HeaderBar';
 export default class TourTabs extends Component {
   render() {
     return (
-      <ScrollView>
+      <ImageBackground
+        source={require('../../Assets/images/mapbackground.png')}
+        style={styles.image}>
+        <HeaderBar
+          title="Tours"
+          />
           <Container>
-          <HeaderBar
-            title="Tours"/>
             <Tabs
             initialPage={0}
             tabBarPosition="bottom">
@@ -24,8 +27,17 @@ export default class TourTabs extends Component {
           </Tab>
         </Tabs>
         </Container>
-
-    </ScrollView>
+    </ImageBackground>
 );
   }
 }
+
+const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    width: null,
+    height: null,
+    justifyContent: 'center',
+    alignContent: 'center'
+  }
+});

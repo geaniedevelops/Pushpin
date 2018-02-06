@@ -1,97 +1,54 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import { View, ImageBackground, StyleSheet } from 'react-native';
+import { View, Image, Text, StyleSheet } from 'react-native';
 // import { Button } from 'native-base';
 // import { FirebaseApp, firebaseConfig } from '../../../Utils/Firebase';
-import Input from './Input';
-import Button from './Button';
+// import Input from './Input';
+import { Button, Input } from 'native-base';
 import firebaseApp from '../../../Utils/Firebase';
 
 
 export default class SignInForm extends Component {
-  state = {
-    email: '',
-    password: '',
-    authenticating: false,
-    user: null,
-    error: '',
+  constructor() {
+    super()
+    this.state = {
+      email: '',
+      password: '',
+      authenticating: false,
+      user: null,
+      error: '',
+    }
   }
 
-  componentWillMount() {<firebaseApp/>}
+  componentWillMount() {
+    <firebaseApp/>;
+  }
 
-onPressSignIn() {
-    this.setState({
-      authenticating: true,
+  onLoginPress() {
+  this.setState({error: '', loading: true});
+  const {email, password} = this.state;
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+    this.setState({error: '', loading: false});
+  }).catch(() => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+      this.setState({error: '', loading: false});
+    }).catch(() => {
+      this.setState({error: 'Authentication failed.', loading: false});
     });
-
-const { firstName, lastName } = this.state;
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(user => this.setState({
-        authenticating: false,
-        user,
-        error: '',
-      }))
-      .catch(() => {
-        // Login was not successful
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(user => this.setState({
-            authenticating: false,
-            user,
-            error: '',
-          }))
-          .catch(() => this.setState({
-            authenticating: false,
-            user: null,
-            error: 'Authentication Failure',
-          }))
-      })
+  });
   }
 
-  onPressLogOut() {
-    firebase.auth().signOut()
-      .then(() => {
-        this.setState({
-          email: '',
-          password: '',
-          authenticating: false,
-          user: null,
-        })
-      }, error => {
-        console.error('Sign Out Error', error);
-      });
-  }
-
-  renderCurrentState() {
-    if (this.state.authenticating) {
-     return (
-       <View>
-         <ActivityIndicator size='large' />
-       </View>
-     )
-   }
-
-   if (this.state.user !== null) {
-     return (
-       <View>
-         <Text>Logged In</Text>
-         <Button onPress={() => this.onPressLogOut()}>Log Out</Button>
-       </View>
-     )
-   }
-  }
 
   render() {
     return (
-      <ImageBackground
-        source={require("../../../Assets/images/bggradient.jpg")}
-        style={styles.image}
-        >
-        <View>
+        <View
+          style={styles.view}>
           <Input
             placeholder='Email Address'
             label='Email'
             onChangeText={email => this.setState({ email })}
             value={this.state.email}
+            style={styles.form}
             />
           <Input
             placeholder='Password'
@@ -99,18 +56,31 @@ const { firstName, lastName } = this.state;
             secureTextEntry
             onChangeText={password => this.setState({ password })}
             value={this.state.password}
+            style={styles.form}
             />
-          <Button>Sign In</Button>
+          <Button
+            round
+            info
+            style={styles.button}>
+            <Text>Sign In</Text>
+          </Button>
         </View>
-      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
- image: {
-   flex: 1,
-   width: null,
-   height: null,
- }
+  view: {
+    flex: 1,
+    backgroundColor: "#FEFAEC",
+    paddingTop:10
+  },
+  button: {
+    flex: 2,
+    width: 350
+  },
+  form: {
+    flex: 4,
+    width: 350
+  }
 });

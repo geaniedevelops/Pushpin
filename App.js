@@ -10,15 +10,5 @@ class App extends Component {
       )}
 }
 
-const styles = StyleSheet.create({
- image: {
-   flex: 1,
-   width: null,
-   height: null,
-   justifyContent: 'center',
-   alignContent: 'center'
- }
-});
-
 
 export default App;

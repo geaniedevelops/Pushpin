@@ -1,23 +1,60 @@
-import React, {Component} from 'react';
-import {View} from 'react-native';
-import MapboxGL from '@mapbox/react-native-mapbox-gl';
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Mapbox from '@mapbox/react-native-mapbox-gl';
 
-MapboxGL.setAccessToken('pk.eyJ1IjoiZ2VhbmllYmxhbmNvIiwiYSI6ImNqY29jY2ZrYTF5YmEyeG1yZzBiN2lqbjkifQ.0CVhUOdbqql0kQJBFOuXsA');
+Mapbox.setAccessToken('pk.eyJ1IjoiZ2VhbmllYmxhbmNvIiwiYSI6ImNqY29jY2ZrYTF5YmEyeG1yZzBiN2lqbjkifQ.0CVhUOdbqql0kQJBFOuXsA');
 
-const UserCoordinates = [-73.98197650909422, 40.768793007758816];
+export default class App extends Component<{}> {
 
-export default class Map extends Component {
-  render () {
+  renderAnnotations () {
     return (
-      <View style={{flex: 1}}>
-          <MapboxGL.MapView
-          ref={(c) => this._map = c}
-          style={{flex: 1}}
-          zoomLevel={15}
-          centerCoordinate={UserCoordinates}
-          >
-        </MapboxGL.MapView>
+      <Mapbox.PointAnnotation
+        key='pointAnnotation'
+        id='pointAnnotation'
+        coordinate={[11.254, 43.772]}>
+
+        <View style={styles.annotationContainer}>
+          <View style={styles.annotationFill} />
+        </View>
+        <Mapbox.Callout title='Look! An annotation!' />
+      </Mapbox.PointAnnotation>
+    )
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Mapbox.MapView
+            styleURL={Mapbox.StyleURL.Standard}
+            zoomLevel={15}
+            centerCoordinate={[11.256, 43.770]}
+            style={styles.container}
+            showUserLocation={true}
+            logo={false}>
+            {this.renderAnnotations()}
+        </Mapbox.MapView>
       </View>
-      );
+    );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  annotationContainer: {
+    width: 30,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    borderRadius: 15,
+  },
+  annotationFill: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: 'orange',
+    transform: [{ scale: 0.6 }],
+  },
+});

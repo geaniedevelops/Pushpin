@@ -1,112 +1,89 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import { StyleSheet, ScrollView, Modal } from 'react-native';
-import { Container, Content, Card, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
-const Item = Picker.Item;
-
-export default class SignUpForm extends Component {
-    render() {
-        return (
-            <Modal
-              style={style.modal}
-              >
-                <Card>
-                  <H1>Sign Up</H1>
-                    <List>
-                        <ListItem>
-                            <InputGroup>
-                                <Input inlineLabel label="First Name" placeholder="First Name" />
-                            </InputGroup>
-                        </ListItem>
-=======
 import * as firebase from 'firebase';
-import { View, ImageBackground, StyleSheet } from 'react-native';
+import { View, Modal, Text, StyleSheet } from 'react-native';
 // import { List, ListItem, InputGroup, Input, Text, Button } from 'native-base';
-import Input from './Input';
-import Button from './Button';
+import { Button, Input } from 'native-base';
 import firebaseApp from '../../../Utils/Firebase';
 
 
 export default class SignUpForm extends Component {
   state = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    authenticating: false,
-    user: null,
-    error: '',
-  }
->>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
+    modalVisible: false,
+  };
 
-  componentWillMount() {
-    <firebaseApp/>;
+  openModal() {
+    this.setState({modalVisible:true});
+  }
+
+  closeModal() {
+    this.setState({modalVisible:false});
   }
 
 
-<<<<<<< HEAD
-                        <ListItem>
-                            <InputGroup>
-                                <Input placeholder="Phone Number" keyboardType="numeric" />
-                            </InputGroup>
-                        </ListItem>
-                    </List>
-                    <Button><Text>Sign Up</Text></Button>
-                </Card>
-            </Modal>
-        );
-    }
-};
-
-const style = StyleSheet.create({
-  modal: {
-    padding: 5,
-  },
-=======
   render() {
     return (
-      <ImageBackground
-        source={require("../../../Assets/images/bggradient.jpg")}
-        style={styles.image}
-        >
       <View>
-        <Input
-          placeholder='First Name'
-          label='First Name'
-          onChangeText={firstName => this.setState({ firstName })}
-          value={this.state.firstName}
-          />
-        <Input
-          placeholder='Last Name'
-          label='Last Name'
-          onChangeText={lastName => this.setState({ lastName })}
-          value={this.state.lastName}
-          />
-        <Input
-          placeholder='Email Address'
-          label='Email'
-          onChangeText={email => this.setState({ email })}
-          value={this.state.email}
-            />
-        <Input
-          placeholder='Password'
-          label='Password'
-          secureTextEntry
-          onChangeText={password => this.setState({ password })}
-          value={this.state.password}
-            />
-          <Button>Sign Up</Button>
+        <Modal
+         visible={this.state.modalVisible}
+         animationType={'slide'}
+         onRequestClose={() => this.closeModal()}>
+          <Input
+            placeholder='First Name'
+            label='First Name'
+            onChangeText={firstName => this.setState({ firstName })}
+            value={this.state.firstName}/>
+          <Input
+            placeholder='Last Name'
+            label='Last Name'
+            onChangeText={lastName => this.setState({ lastName })}
+            value={this.state.lastName}/>
+          <Input
+            placeholder='Email Address'
+            label='Email'
+            onChangeText={email => this.setState({ email })}
+            value={this.state.email}/>
+            <Input
+            placeholder='Password'
+            label='Password'
+            secureTextEntry
+            onChangeText={password => this.setState({ password })}
+            value={this.state.password}/>
+          <Button
+            round
+            info
+            style={{width:350}}>
+            <Text>Sign Up</Text>
+          </Button>
+          <Text
+            onPress={() => this.closeModal()}>Have An Account? Sign In</Text>
+        </Modal>
+
+        <Button
+          round
+          info
+          onPress={() => this.openModal()}
+          style={styles.openButton}>
+          <Text>Sign Up</Text>
+        </Button>
+
       </View>
-      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
- image: {
-   flex: 1,
-   width: null,
-   height: null,
- }
->>>>>>> 6047a1c0a463a2584fc98dfcbe494fc7497ccc97
+  view: {
+    flex: 1
+  },
+  button: {
+    flex: 2,
+    width: 350
+  },
+  form: {
+    flex: 4,
+    width: 350
+  },
+  openButton: {
+    width:350
+  }
 });
