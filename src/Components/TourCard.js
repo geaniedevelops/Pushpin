@@ -12,7 +12,7 @@ export default class TourCard extends Component {
     tourDescription: 'tour.description',
     tourPrice: 'tour.price',
     tourImage: 'tour.image',
-    pointNumber: 'tour.pointNumber',
+    pointNumber: 'tour.pointNumber'
   }
 }
   render() {
@@ -42,7 +42,9 @@ export default class TourCard extends Component {
                 </Button>
               </Left>
               <Right>
-                <Text>{this.state.pointNumber}</Text>
+                <Button transparent textStyle={{color: '#87838B'}}>
+                <Text>Start Tour</Text>
+                </Button>
               </Right>
             </CardItem>
           </Card>
