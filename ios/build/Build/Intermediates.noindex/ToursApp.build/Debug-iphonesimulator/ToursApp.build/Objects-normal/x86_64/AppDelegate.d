@@ -1,7 +1,6 @@
 dependencies: \
   /Users/geanie/Desktop/Docs/Projects/ToursApp/ios/ToursApp/AppDelegate.m \
   /Users/geanie/Desktop/Docs/Projects/ToursApp/ios/ToursApp/AppDelegate.h \
-  /Users/geanie/Desktop/Docs/Projects/ToursApp/ios/Pods/Firebase/Core/Sources/module.modulemap \
   /Users/geanie/Desktop/Docs/Projects/ToursApp/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBundleURLProvider.h \
   /Users/geanie/Desktop/Docs/Projects/ToursApp/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
   /Users/geanie/Desktop/Docs/Projects/ToursApp/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \

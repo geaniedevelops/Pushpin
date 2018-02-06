@@ -51,5 +51,5 @@ export default class TourCard extends Component {
         </Content>
       </Container>
     );
-  }
+}
 }
