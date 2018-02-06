@@ -16,42 +16,29 @@ export default class HomeScreen extends Component {
       <ImageBackground
         source={require('../../Assets/images/mapbackground.png')}
         style={styles.image}>
-        <Grid
-          style={styles.form}>
-          <Row size={3}>
-            <Image
-              source={require('../../Assets/images/pushpin.png')}
-              style={styles.icon}/>
-          </Row>
-          <Row size= {2}>
-            <SignInForm/>
-          </Row>
-          <Row size={1}>
-            <SignUpForm
-              style={styles.SUform}/>
-          </Row>
-        </Grid>
+        <Image
+        source={require('../../Assets/images/pushpin.png')}
+        style={styles.icon}/>
+        <SignInForm
+        style={styles.form}/>
+        <SignUpForm
+        style={styles.form}/>
       </ImageBackground>
     );
   }
 }
-
+//
 const styles = StyleSheet.create({
   image: {
     flex: 1,
     width: null,
     height: null,
-    justifyContent: 'center',
     alignContent: 'center'
   },
   form: {
-    alignContent: 'center',
-    justifyContent: 'center',
-    padding: 10
+    flex: 1
   },
   icon: {
-    height:400,
-    width:400,
     flex:2
   },
   SUform: {
