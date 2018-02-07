@@ -14,15 +14,17 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <ImageBackground
-        source={require('../../Assets/images/mapbackground.png')}
+        source={require('../../Assets/images/launch_background.png')}
         style={styles.image}>
         <Image
-        source={require('../../Assets/images/pushpin.png')}
+        source={require('../../Assets/images/homeicon.png')}
+        resizeMode='contain'
         style={styles.icon}/>
-        <SignInForm
-        style={styles.form}/>
-        <SignUpForm
-        style={styles.form}/>
+      <View
+        style={styles.form}>
+        <SignInForm/>
+        <SignUpForm/>
+      </View>
       </ImageBackground>
     );
   }
@@ -32,16 +34,15 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     width: null,
-    height: null,
-    alignContent: 'center'
+    height: null
   },
   form: {
-    flex: 1
+    flex: 3,
+    padding: 10
   },
   icon: {
-    flex:2
-  },
-  SUform: {
-    paddingTop: 10
+    flex: 1.5,
+    zIndex:1,
+    marginTop:100
   }
 });

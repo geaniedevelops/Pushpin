@@ -28,6 +28,7 @@ export default class Map extends Component<{}> {
             centerCoordinate={[11.256, 43.770]}
             style={styles.container}
             showUserLocation={true}
+            logoEnabled={false}
             >
             {this.renderAnnotations()}
         </MapboxGL.MapView>

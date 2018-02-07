@@ -60,10 +60,10 @@ export default class SignUpForm extends Component {
 
         <Button
           round
-          info
           onPress={() => this.openModal()}
           style={styles.openButton}>
-          <Text>Sign Up</Text>
+          <Text
+            >Sign Up</Text>
         </Button>
 
       </View>
@@ -81,9 +81,10 @@ const styles = StyleSheet.create({
   },
   form: {
     flex: 4,
-    width: 350
   },
   openButton: {
-    width:350
+    width:350,
+    padding:5,
+    alignContent: 'center'
   }
 });

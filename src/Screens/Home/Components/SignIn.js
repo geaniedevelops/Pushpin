@@ -4,7 +4,7 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 // import { Button } from 'native-base';
 // import { FirebaseApp, firebaseConfig } from '../../../Utils/Firebase';
 // import Input from './Input';
-import { Button, Input } from 'native-base';
+import { Button, Item, Form, Container, Input } from 'native-base';
 import firebaseApp from '../../../Utils/Firebase';
 
 
@@ -41,15 +41,19 @@ export default class SignInForm extends Component {
 
   render() {
     return (
+      <View
+        style={styles.view}>
         <View
-          style={styles.view}>
+          style={styles.formContainer}>
+          <Item fixedLabel>
           <Input
             placeholder='Email Address'
             label='Email'
             onChangeText={email => this.setState({ email })}
             value={this.state.email}
             style={styles.form}
-            />
+            /></Item>
+          <Item fixedLabel>
           <Input
             placeholder='Password'
             label='Password'
@@ -57,14 +61,15 @@ export default class SignInForm extends Component {
             onChangeText={password => this.setState({ password })}
             value={this.state.password}
             style={styles.form}
-            />
-          <Button
-            round
-            info
-            style={styles.button}>
-            <Text>Sign In</Text>
-          </Button>
+            /></Item>
         </View>
+        <Button
+          round
+          info
+          style={styles.button}>
+          <Text>Sign In</Text>
+        </Button>
+      </View>
     );
   }
 }
@@ -72,15 +77,22 @@ export default class SignInForm extends Component {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: "#FEFAEC",
-    paddingTop:10
+    margin:5,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center'
+  },
+  formContainer: {
+    backgroundColor: 'rgba(254, 250, 236, .6)',
+    borderRadius: 10,
+    height: 100
   },
   button: {
-    flex: 2,
-    width: 350
+    width: 325,
+    backgroundColor:'white',
+    marginTop: 10
   },
   form: {
-    flex: 4,
-    width: 350
+    flex: 1
   }
 });

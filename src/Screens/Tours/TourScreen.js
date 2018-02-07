@@ -5,12 +5,11 @@ import MyTours from './Components/MyTours';
 import TourSearch from './Components/TourSearch';
 import HeaderBar from '../../Components/HeaderBar';
 
-
 export default class TourTabs extends Component {
   render() {
     return (
       <ImageBackground
-        source={require('../../Assets/images/mapbackground.png')}
+        source={require('../../Assets/images/launch_background.png')}
         style={styles.image}>
         <HeaderBar
           title="Tours"
@@ -18,14 +17,16 @@ export default class TourTabs extends Component {
           <Container>
             <Tabs
             initialPage={0}
-            tabBarPosition="bottom">
-            <Tab heading="My Tours">
-              <MyTours/>
-            </Tab>
-            <Tab heading="Find Tours">
-              <TourSearch/>
-          </Tab>
-        </Tabs>
+            tabBarPosition="bottom"
+            style={styles.tabs}>
+              <Tab heading="My Tours">
+                  <MyTours/>
+              </Tab>
+
+              <Tab heading="Find Tours">
+                  <TourSearch/>
+              </Tab>
+          </Tabs>
         </Container>
     </ImageBackground>
 );
@@ -39,5 +40,8 @@ const styles = StyleSheet.create({
     height: null,
     justifyContent: 'center',
     alignContent: 'center'
+  },
+  tabs: {
+    backgroundColor: 'rgba(254, 250, 236, .6)'
   }
 });

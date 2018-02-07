@@ -400,6 +400,18 @@ playground.xcworkspace
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
+### Database ###
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sql
+*.sqlite3
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
 
 # End of https://www.gitignore.io/api/swift,objective-c
