@@ -11,19 +11,21 @@ export default class TourTabs extends Component {
       <ImageBackground
         source={require('../../Assets/images/launch_background.png')}
         style={styles.image}>
-        <HeaderBar
-          title="Tours"
-          />
-          <Container>
+        <HeaderBar/>
+          <Container
+            style={styles.container}>
             <Tabs
             initialPage={0}
-            tabBarPosition="bottom"
-            style={styles.tabs}>
-              <Tab heading="My Tours">
+            tabBarPosition="bottom">
+              <Tab
+                heading="My Tours"
+                style={{backgroundColor:'transparent'}}>
                   <MyTours/>
               </Tab>
 
-              <Tab heading="Find Tours">
+              <Tab
+                heading="Find Tours"
+                style={{backgroundColor:'transparent'}}>
                   <TourSearch/>
               </Tab>
           </Tabs>
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center'
   },
-  tabs: {
-    backgroundColor: 'rgba(254, 250, 236, .6)'
+  container: {
+    backgroundColor: 'transparent'
   }
 });

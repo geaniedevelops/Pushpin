@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Input, Item, H1, Button, Text, Content, Picker, Form } from 'native-base';
+import { Input, Item, H1, Button, Text, Content, Picker, Form, Label } from 'native-base';
 import SearchPicker from './SearchPicker';
 
 export default class SearchForm extends Component {
@@ -19,11 +19,15 @@ export default class SearchForm extends Component {
 
   render() {
     return (
-      <Content>
-        <Form>
+        <Form
+          style={styles.form}>
+          <Item inlineLabel>
+             <Label>Zipcode</Label>
+             <Input />
+           </Item>
           <Picker
             mode="dropdown"
-            placeholder="Select One"
+            placeholder="Choose A Category"
             selectedValue={this.state.theme}
             onValueChange={this.onValueChange.bind(this)}>
               <Item label="Popular" value="popular" />
@@ -36,7 +40,13 @@ export default class SearchForm extends Component {
               <Item label="Crime & Ghost" value="gritty"/>
           </Picker>
         </Form>
-      </Content>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  form: {
+    backgroundColor: 'rgba(254, 250, 236, .8)',
+    marginTop:5
+  }
+})

@@ -5,13 +5,16 @@ import MapboxGL from '@mapbox/react-native-mapbox-gl';
 MapboxGL.setAccessToken('pk.eyJ1IjoiZ2VhbmllYmxhbmNvIiwiYSI6ImNqY29jY2ZrYTF5YmEyeG1yZzBiN2lqbjkifQ.0CVhUOdbqql0kQJBFOuXsA');
 
 export default class Map extends Component<{}> {
+  state = {
+    coordinates: [40.7059, 74.0027]
+  }
 
   renderAnnotations () {
     return (
       <MapboxGL.PointAnnotation
         key='pointAnnotation'
         id='pointAnnotation'
-        coordinate={[11.254, 43.772]}>
+        coordinate={this.state.coordinates}>
         <View style={styles.annotationContainer}>
           <View style={styles.annotationFill} />
         </View>
@@ -25,7 +28,7 @@ export default class Map extends Component<{}> {
         <MapboxGL.MapView
             styleURL={('mapbox://styles/geanieblanco/cjdazpzoa5ofq2rqho7sf7o6m')}
             zoomLevel={15}
-            centerCoordinate={[11.256, 43.770]}
+            centerCoordinate={this.state.coordinates}
             style={styles.container}
             showUserLocation={true}
             logoEnabled={false}
@@ -53,7 +56,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 15,
-    backgroundColor: 'orange',
+    backgroundColor: '#1C76B9',
     transform: [{ scale: 0.6 }],
   },
 });

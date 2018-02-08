@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, ImageBackground, StyleSheet, View } from 'react-native';
+import { Text, View, ImageBackground, StyleSheet } from 'react-native';
 import SearchCard from '../../../Components/SearchCard';
 import SearchForm from './SearchForm';
 
 export default class SearchScreen extends React.Component {
   render() {
     return (
-      <ScrollView
-        contentContainerStyle={styles.background}>
+      <View
+        style={styles.view}>
         <SearchForm
-        style={styles.background}/>
+        style={styles.form}/>
         <SearchCard
-        style={styles.background}/>
-    </ScrollView>
+        style={styles.card}/>
+    </View>
     )
   }
 }
@@ -22,12 +22,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
     },
   view: {
-    flex: 1
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around'
     },
   form: {
     flex: 1
     },
   card: {
-    flex: 2
+    flex: 3,
+    marginTop:10
    }
 });
