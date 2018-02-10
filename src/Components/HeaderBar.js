@@ -12,7 +12,8 @@ import {
 export default class HeaderBar extends Component {
   render() {
     return (<View>
-      <Header>
+      <Header
+        style={{backgroundColor: 'rgba(254, 250, 236, .9)'}}>
         <Body>
           <Title>
             <Image
@@ -28,6 +29,6 @@ export default class HeaderBar extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   }
 });

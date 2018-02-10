@@ -13,17 +13,13 @@ export default class MapScreen extends Component {
       <Container>
         <Tabs
           initialPage={0}
-          tabBarPosition="bottom"
-          >
-
+          tabBarPosition="bottom">
           <Tab heading="Map">
             <Map/>
           </Tab>
-
           <Tab heading="List">
             <PointList/>
           </Tab>
-
         </Tabs>
       </Container>
     </ScrollView>

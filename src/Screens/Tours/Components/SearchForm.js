@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Input, Item, H1, Button, Text, Content, Picker, Form, Label } from 'native-base';
+import { Input, Item, H1, Content, Picker, Form, Label, Button, Text } from 'native-base';
 import SearchPicker from './SearchPicker';
 
 export default class SearchForm extends Component {
@@ -39,14 +39,25 @@ export default class SearchForm extends Component {
               <Item label="Finance" value="finance"/>
               <Item label="Crime & Ghost" value="gritty"/>
           </Picker>
+          <Button
+            style={styles.button}>
+            <Text>Search</Text>
+          </Button>
         </Form>
-    )
+      )
   }
 }
 
 const styles = StyleSheet.create({
   form: {
     backgroundColor: 'rgba(254, 250, 236, .8)',
-    marginTop:5
+    marginTop:5,
+    alignContent: 'center'
+  },
+  button: {
+    backgroundColor: '#3385e5',
+    width: 300,
+    margin:3,
+    justifyContent: 'center'
   }
 })

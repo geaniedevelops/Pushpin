@@ -14,7 +14,7 @@ export default class Map extends Component<{}> {
       <MapboxGL.PointAnnotation
         key='pointAnnotation'
         id='pointAnnotation'
-        coordinate={this.state.coordinates}>
+        coordinate={[-74.0027, 40.7059]}>
         <View style={styles.annotationContainer}>
           <View style={styles.annotationFill} />
         </View>
@@ -28,7 +28,7 @@ export default class Map extends Component<{}> {
         <MapboxGL.MapView
             styleURL={('mapbox://styles/geanieblanco/cjdazpzoa5ofq2rqho7sf7o6m')}
             zoomLevel={15}
-            centerCoordinate={this.state.coordinates}
+            centerCoordinate={[-74.0027, 40.7059]}
             style={styles.container}
             showUserLocation={true}
             logoEnabled={false}

@@ -6,6 +6,8 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 // import Input from './Input';
 import { Button, Item, Form, Container, Input } from 'native-base';
 import firebaseApp from '../../../Utils/Firebase';
+import SignUpForm from './SignUp';
+
 
 
 export default class SignInForm extends Component {
@@ -63,12 +65,18 @@ export default class SignInForm extends Component {
             style={styles.form}
             /></Item>
         </View>
+        <View
+          style={styles.buttonView}>
         <Button
           round
           info
           style={styles.button}>
-          <Text>Sign In</Text>
+          <Text
+            style={styles.text}>Sign In</Text>
         </Button>
+        <SignUpForm
+          style={styles.button}/>
+        </View>
       </View>
     );
   }
@@ -79,20 +87,28 @@ const styles = StyleSheet.create({
     flex: 1,
     margin:5,
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignContent: 'center'
+    justifyContent: 'center'
   },
   formContainer: {
-    backgroundColor: 'rgba(254, 250, 236, .6)',
+    backgroundColor: 'rgba(254, 250, 236, .8)',
     borderRadius: 10,
     height: 100
   },
   button: {
-    width: 325,
-    backgroundColor:'white',
-    marginTop: 10
+    width: 150,
+    backgroundColor:'#3385e5',
+    marginTop: 10,
+    justifyContent: 'center'
   },
   form: {
     flex: 1
+  },
+  buttonView: {
+    flex:1,
+    flexDirection:'row',
+    justifyContent: 'space-around'
+  },
+  text: {
+    color:'rgb(254, 250, 236)'
   }
 });

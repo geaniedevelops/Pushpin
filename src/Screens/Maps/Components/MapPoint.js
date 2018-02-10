@@ -5,7 +5,7 @@ import MapboxGL from '@mapbox/react-native-mapbox-gl';
 var PointA = {
   id:1,
   title: "Washington Monument",
-  coordinates: [38.8895, 77.0353°],
+  coordinates: [38.8895, 77.0353],
 
 }
 

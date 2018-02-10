@@ -63,7 +63,8 @@ export default class SignUpForm extends Component {
           onPress={() => this.openModal()}
           style={styles.openButton}>
           <Text
-            >Sign Up</Text>
+            style={styles.text}>
+            Sign Up</Text>
         </Button>
 
       </View>
@@ -83,8 +84,12 @@ const styles = StyleSheet.create({
     flex: 4,
   },
   openButton: {
-    width:350,
-    padding:5,
-    alignContent: 'center'
+    width: 150,
+    backgroundColor:'#3385e5',
+    marginTop: 10,
+    justifyContent: 'center'
+  },
+  text: {
+    color:'rgb(254, 250, 236)'
   }
 });
