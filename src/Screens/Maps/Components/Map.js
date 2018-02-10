@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import MapboxGL from '@mapbox/react-native-mapbox-gl';
+import { tourPoints, tours } from '../../../Components/PracticeTour';
 
 MapboxGL.setAccessToken('pk.eyJ1IjoiZ2VhbmllYmxhbmNvIiwiYSI6ImNqY29jY2ZrYTF5YmEyeG1yZzBiN2lqbjkifQ.0CVhUOdbqql0kQJBFOuXsA');
 
@@ -11,6 +12,7 @@ export default class Map extends Component<{}> {
 
   renderAnnotations () {
     return (
+
       <MapboxGL.PointAnnotation
         key='pointAnnotation'
         id='pointAnnotation'

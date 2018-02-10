@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import { View, Modal, Text, StyleSheet } from 'react-native';
-import { Button, Input, Item } from 'native-base';
+import { View, Modal, Text, StyleSheet, KeyboardAvoidingView, TextInput } from 'react-native';
+import { Button, Item } from 'native-base';
 import firebaseApp from '../../../Utils/Firebase';
 
 
 export default class SignUpForm extends Component {
-  state = {
-    modalVisible: false,
-  };
+  constructor(props) {
+      super(props);
+      this.state = {
+          email: "",
+          password: "",
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          modalVisible: false
+      }
+  }
+
+  onRegister() {
+    const { email, password, firstName, lastName, phoneNumber } = this.state;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((user) => {
+    this.props.navigation.navigate('HomeScreen')
+      // Need to add: something to save the user object
+    })
+    .catch((error) => {
+    const { code, message } = error;
+  });
+}
 
   openModal() {
     this.setState({modalVisible:true});
@@ -25,49 +45,54 @@ export default class SignUpForm extends Component {
          visible={this.state.modalVisible}
          animationType={'slide'}
          onRequestClose={() => this.closeModal()}>
+
          <Item fixedLabel>
-          <Input
+          <TextInput
             style={{flex:1}}
             placeholder='First Name'
             label='First Name'
-            onChangeText={firstName => this.setState({ firstName })}
+            onChangeText={(text) => this.setState({firstName:text })}
             value={this.state.firstName}/>
           </Item>
+
           <Item fixedLabel>
-          <Input
+          <TextInput
             style={{flex:1}}
             placeholder='Last Name'
             label='Last Name'
-            onChangeText={lastName => this.setState({ lastName })}
+            onChangeText={(text) => this.setState({lastName:text})}
             value={this.state.lastName}/>
           </Item>
+
           <Item fixedLabel>
-          <Input
+          <TextInput
             style={{flex:1}}
             placeholder='Email Address'
             label='Email'
-            onChangeText={email => this.setState({ email })}
+            onChangeText={(text) => this.setState({email:text})}
             value={this.state.email}/>
           </Item>
+
           <Item fixedLabel>
-          <Input
+          <TextInput
             style={{flex:1}}
             placeholder='Password'
             label='Password'
             secureTextEntry
-            onChangeText={password => this.setState({ password })}
+            onChangeText={(text) => this.setState({password:text})}
             value={this.state.password}/>
           </Item>
 
           <Item fixedLabel>
-          <Input
+          <TextInput
             style={{flex:1}}
             placeholder="Phone Number"
             label="Phone Number"
             keyboardType="numeric"
-            onChangeText={(text) => this.setState({ phoneNumber })}
+            onChangeText={(text) => this.setState({phoneNumber:text})}
             value={this.state.phoneNumber}/>
           </Item>
+
           <Button
             round
             info
@@ -75,8 +100,11 @@ export default class SignUpForm extends Component {
             style={{width:350}}>
             <Text>Sign Up</Text>
           </Button>
+
           <Text
-            onPress={() => this.closeModal()}>Have An Account? Sign In</Text>
+            onPress={() => this.closeModal()}>
+            Have An Account? Sign In
+          </Text>
         </Modal>
 
         <Button
@@ -85,19 +113,15 @@ export default class SignUpForm extends Component {
           style={styles.openButton}>
           <Text
             style={styles.text}>
-            Sign Up</Text>
+            Sign Up
+          </Text>
         </Button>
-
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  modal: {
-    height: 400,
-    width: 200
-  },
   button: {
     flex: 2,
     width: 350
