@@ -14,13 +14,11 @@ const tourPoints = [{
     id: 2,
     title: "Madison Square Garden",
     coodinatates: [-73.9934, 40.7505],
-    description: "Madison Square Garden, often called "
-    MSG " or simply "
-    The Garden ", is a multi-purpose indoor arena in the New York City borough of Manhattan."
+    description: "Madison Square Garden, often called MSG or simply The Garden, is a multi-purpose indoor arena in the New York City borough of Manhattan."
   },
   {
     id: 3,
-    title: "Bryant Park"
+    title: "Bryant Park",
     coordinates: [-73.9832, 40.7536],
     description: "Bryant Park is a 9.603-acre privately managed public park located in the New York City borough of Manhattan. It is located between Fifth and Sixth Avenues and between 40th and 42nd Streets in Midtown Manhattan."
   },
@@ -38,7 +36,7 @@ const tourPoints = [{
   },
   {
     id: 6,
-    title: "Radio City Music Hall"
+    title: "Radio City Music Hall",
     coordinates: [-73.9800, 40.7600],
     description: "Radio City Music Hall is an entertainment venue located at 1260 Avenue of the Americas at Rockefeller Center in Midtown Manhattan, New York City. Nicknamed the Showplace of the Nation, it was for a time the leading tourist destination in the city."
   },
@@ -104,8 +102,8 @@ const tourPoints = [{
   },
   {
     id: 18,
-    title: "Canyon of Heroes"
-    coordinates: [-74.010265, 40.709482]
+    title: "Canyon of Heroes",
+    coordinates: [-74.010265, 40.709482],
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum vel nisl a ultricies. Aliquam neque elit, lacinia et fermentum a, viverra id lacus. Donec finibus cursus lacus, nec pretium massa venenatis non."
   },
   {
@@ -124,17 +122,23 @@ const tourPoints = [{
 
 const tours = [{
   id: 0,
+  location: "New York, NY",
   title: "Midtown New York City",
   description: "Visit popular points in Midtown New York City",
-  tourPoints: [tourPoints[0], tourPoints[1] tourPoints[2], tourPoints[3], tourPoints[4], tourPoints[5], tourPoints[6], tourPoints[7], tourPoints[8], tourPoints[9], tourPoints[10]],
+  tourPoints: [tourPoints[0], tourPoints[1], tourPoints[2], tourPoints[3], tourPoints[4], tourPoints[5], tourPoints[6], tourPoints[7], tourPoints[8], tourPoints[9], tourPoints[10]],
   price: 0
 }, {
   id: 1,
+  location: "New York, NY",
   title: "Financial District New York City",
   description: "Visit popular points in the Financial District",
-  tourPoints: [tourPoints[11] tourPoints[12], tourPoints[13], tourPoints[14], tourPoints[15], tourPoints[16], tourPoints[17], tourPoints[18], tourPoints[19], tourPoints[20]],
+  tourPoints: [tourPoints[11], tourPoints[12], tourPoints[13], tourPoints[14], tourPoints[15], tourPoints[16], tourPoints[17], tourPoints[18], tourPoints[19], tourPoints[20]],
   price: 0
 }];
 
-export tours;
-export tourPoints;
+export {
+  tours
+};
+export {
+  tourPoints
+};
