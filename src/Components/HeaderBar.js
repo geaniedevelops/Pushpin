@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Image } from 'react-native';
 import {
   Header,
   Left,
@@ -12,11 +12,23 @@ import {
 export default class HeaderBar extends Component {
   render() {
     return (<View>
-      <Header>
+      <Header
+        style={{backgroundColor: 'rgba(254, 250, 236, .9)'}}>
         <Body>
-          <Title>{this.props.title}</Title>
+          <Title>
+            <Image
+            source={require('../Assets/images/header_logo.png')}
+            style={styles.header}
+            resizeMode="contain"/>
+          </Title>
         </Body>
       </Header>
     </View>);
   }
 }
+
+const styles = StyleSheet.create({
+  header: {
+    resizeMode: 'contain',
+  }
+});

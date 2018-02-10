@@ -8,7 +8,7 @@ export default class AccountScreen extends React.Component {
   render() {
     return (
       <View>
-        <HeaderBar title="Account"/>
+        <HeaderBar/>
       </View>
     )
   }

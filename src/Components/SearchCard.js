@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 
 
@@ -20,6 +20,7 @@ export default class TourCard extends Component {
       <Container>
         <Content>
           <Card style={{flex: 0}}>
+
             <CardItem>
               <Left>
                 <Body>
@@ -35,6 +36,7 @@ export default class TourCard extends Component {
                 <Text>{this.state.tourDescription}</Text>
               </Body>
             </CardItem>
+
             <CardItem>
               <Left>
                 <Button transparent textStyle={{color: '#87838B'}}>
@@ -45,6 +47,7 @@ export default class TourCard extends Component {
                 <Text>{this.state.pointNumber}</Text>
               </Right>
             </CardItem>
+
           </Card>
         </Content>
       </Container>

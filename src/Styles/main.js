@@ -1,9 +1,9 @@
-import React from 'react';
+import { StyleSheet } from 'react-native';
 
-const Styles = StyleSheet.create({
-  scrollview: {
-    backgroundImage: url('../Assets/images/background_gradient'),
-  }
+const styles = StyleSheet.create({
+  card: {},
+  cardText: {},
+  cardImage: {}
 });
 
-export default Styles.
+export default styles;

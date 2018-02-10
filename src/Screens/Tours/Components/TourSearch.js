@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, ImageBackground, StyleSheet } from 'react-native';
+import { Text, View, ImageBackground, StyleSheet } from 'react-native';
 import SearchCard from '../../../Components/SearchCard';
 import SearchForm from './SearchForm';
 
 export default class SearchScreen extends React.Component {
   render() {
     return (
-      <ImageBackground
-        source={require('../../../Assets/images/mapbackground.png')}
-        style={styles.image}>
-      <SearchForm
+      <View
+        style={styles.view}>
+        <SearchForm
         style={styles.form}/>
-      <SearchCard
+        <SearchCard
         style={styles.card}/>
-      </ImageBackground>
+    </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
- image: {
-   flex: 1,
-   width: null,
-   height: null,
- },
- form: {
-   flex: 1
- },
- card: {
-   flex: 5
- }
+  background: {
+    backgroundColor: 'transparent'
+    },
+  view: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+    },
+  form: {
+    flex: 1
+    },
+  card: {
+    flex: 3,
+    marginTop:10
+   }
 });

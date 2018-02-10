@@ -1,38 +1,40 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Mapbox from '@mapbox/react-native-mapbox-gl';
+import MapboxGL from '@mapbox/react-native-mapbox-gl';
 
-Mapbox.setAccessToken('pk.eyJ1IjoiZ2VhbmllYmxhbmNvIiwiYSI6ImNqY29jY2ZrYTF5YmEyeG1yZzBiN2lqbjkifQ.0CVhUOdbqql0kQJBFOuXsA');
+MapboxGL.setAccessToken('pk.eyJ1IjoiZ2VhbmllYmxhbmNvIiwiYSI6ImNqY29jY2ZrYTF5YmEyeG1yZzBiN2lqbjkifQ.0CVhUOdbqql0kQJBFOuXsA');
 
-export default class App extends Component<{}> {
+export default class Map extends Component<{}> {
+  state = {
+    coordinates: [40.7059, 74.0027]
+  }
 
   renderAnnotations () {
     return (
-      <Mapbox.PointAnnotation
+      <MapboxGL.PointAnnotation
         key='pointAnnotation'
         id='pointAnnotation'
-        coordinate={[11.254, 43.772]}>
-
+        coordinate={[-74.0027, 40.7059]}>
         <View style={styles.annotationContainer}>
           <View style={styles.annotationFill} />
         </View>
-        <Mapbox.Callout title='Look! An annotation!' />
-      </Mapbox.PointAnnotation>
+      </MapboxGL.PointAnnotation>
     )
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Mapbox.MapView
-            styleURL={Mapbox.StyleURL.Standard}
+        <MapboxGL.MapView
+            styleURL={('mapbox://styles/geanieblanco/cjdazpzoa5ofq2rqho7sf7o6m')}
             zoomLevel={15}
-            centerCoordinate={[11.256, 43.770]}
+            centerCoordinate={[-74.0027, 40.7059]}
             style={styles.container}
             showUserLocation={true}
-            logo={false}>
+            logoEnabled={false}
+            >
             {this.renderAnnotations()}
-        </Mapbox.MapView>
+        </MapboxGL.MapView>
       </View>
     );
   }
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 15,
-    backgroundColor: 'orange',
+    backgroundColor: '#1C76B9',
     transform: [{ scale: 0.6 }],
   },
 });
