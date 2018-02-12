@@ -22,6 +22,7 @@
     "react-native-firebase": "^3.2.4",
     "react-native-firebase-auth": "^1.0.1",
     "react-native-google-sign-in": "^1.0.16",
+    "react-native-mapbox-gl": "^5.2.1-deprecated",
     "react-native-maps": "^0.19.0",
     "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.0.3",

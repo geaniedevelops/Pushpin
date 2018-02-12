@@ -8,7 +8,7 @@ export default class TourCard extends Component {
     return (
       <Container>
         <Content>
-          <Card style={{flex: 0}}>
+          <Card>
             <CardItem>
               <Left>
                 <Body>
