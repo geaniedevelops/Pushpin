@@ -41,7 +41,7 @@ fetch('userQueryURL')
 .then(function(response) {
 	for (let i = 0; i < reponse.tours.length; i++) {
 		let tourTitle = response.tours[i].title;
-		let tourZipcode = response.tours[i].zipcode;
+		let tourCity = response.tours[i].city;
 		let tourCategory = response.tours[i].category;
 		let tourDescription = response.tours[i].description;
 		let tourPrice = response.tours[i].price;
