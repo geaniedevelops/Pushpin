@@ -2,14 +2,14 @@
 
 zipcodeSearch () {
 
-let zipcode = "" // needs to pull the zipcode from the form
-let zipcodeQueryURL = "https://shrouded-sea-19666.herokuapp.com/api/tour/zipcode/" + zipcode
+let city = "" // needs to pull the city from the form
+let cityQueryURL = "https://shrouded-sea-19666.herokuapp.com/api/tour/zipcode/" + city
 
-fetch('zipcodeQueryURL')
+fetch('cityQueryURL')
 .then(function(response) {
 	for (let i = 0; i < response.length; i++) {
 		let tourTitle = response[i].title;
-		let tourZipcode = response[i].zipcode;
+		let tourCity = response[i].city;
 		let tourCategory = response[i].category;
 		let tourDescription = response[i].description;
 		let tourPrice = response[i].price;
