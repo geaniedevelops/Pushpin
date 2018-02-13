@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Input, Item, H1, Content, Picker, Form, Label, Button, Text } from 'native-base';
-import SearchPicker from './SearchPicker';
 
 export default class SearchForm extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      theme: '',
+      category: '',
       zipcode: ''
     };
   }
   onValueChange(value: string) {
     this.setState({
-      theme: value
+      category: value
     });
   }
 
@@ -22,14 +22,15 @@ export default class SearchForm extends Component {
         <Form
           style={styles.form}>
           <Item inlineLabel>
-             <Label>Zipcode</Label>
-             <Input />
+             <Label>City</Label>
+             <Input/>
            </Item>
           <Picker
             mode="dropdown"
             placeholder="Choose A Category"
             selectedValue={this.state.theme}
             onValueChange={this.onValueChange.bind(this)}>
+              <Item label="All" value ="all"/>
               <Item label="Popular" value="popular" />
               <Item label="History" value="history"/>
               <Item label="Fashion" value="fashion"/>
@@ -40,7 +41,8 @@ export default class SearchForm extends Component {
               <Item label="Crime & Ghost" value="gritty"/>
           </Picker>
           <Button
-            style={styles.button}>
+            style={styles.button}
+            onPress={this.props.handleOnSearch}>
             <Text>Search</Text>
           </Button>
         </Form>

@@ -1,42 +1,44 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, Text, StyleSheet, Alert } from 'react-native';
 import { Button, Item, Form, Container, Input } from 'native-base';
-import firebaseApp from '../../../Utils/Firebase';
 import SignUpForm from './SignUp';
 
 
 
 export default class SignInForm extends Component {
   constructor() {
-    super()
-    this.state = {
+      super();
+      this.handlePress = this.handlePress.bind(this);
+    }
+
+    state = {
       email: '',
       password: '',
-      authenticating: false,
-      user: null,
-      error: '',
+      errorMessage: '',
+      loading: false
     }
-  }
 
-  componentWillMount() {
-    <firebaseApp/>;
-  }
-
-  onLoginPress() {
-    this.setState({error: '', loading: true});
-    const {email, password} = this.state;
-    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      this.setState({error: '', loading: false});
-      }).catch(() => {
-      firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-      this.setState({error: '', loading: false});
-      }).catch(() => {
-      this.setState({error: 'Authentication failed.', loading: false});
+    onLoginSuccess(user) {
+    this.setState({
+      email: '',
+      password: '',
+      errorMessage: '',
+      loading: false
     });
-  });
+    alert('Welcome!', 'Thank you for signing in, ' + user.email);
   }
+  
 
+  handlePress({ email, password }) {
+    const { alert } = Alert;
+    this.setState({ loading: true });
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(this.onLoginSuccess.bind(this))
+        .catch(() => {alert('User does not exist!')
+        });
+  }
 
   render() {
     return (
@@ -67,6 +69,7 @@ export default class SignInForm extends Component {
         <Button
           round
           info
+          onPress={() => this.handlePress({ ...this.state })}
           style={styles.button}>
           <Text
             style={styles.text}>Sign In</Text>

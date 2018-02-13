@@ -4,17 +4,6 @@ import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Ic
 
 
 export default class TourCard extends Component {
-  constructor(){
-  super()
-  this.state = {
-    tourTitle: 'tour.title',
-    tourLocation: 'tour.location',
-    tourDescription: 'tour.description',
-    tourPrice: 'tour.price',
-    tourImage: 'tour.image',
-    pointNumber: 'tour.pointNumber',
-  }
-}
   render() {
     return (
       <Container>
@@ -24,27 +13,27 @@ export default class TourCard extends Component {
             <CardItem>
               <Left>
                 <Body>
-                  <Text>{this.state.tourTitle}</Text>
-                  <Text note>{this.state.tourLocation}</Text>
+                  <Text>{this.props.tourTitle}</Text>
+                  <Text note>{this.props.tourZipcode}</Text>
                 </Body>
               </Left>
             </CardItem>
 
             <CardItem>
               <Body>
-                <Image source={require('../Assets/images/NYCtour.jpeg')} style={{height: 200, width: 200, flex: 1}}/>
-                <Text>{this.state.tourDescription}</Text>
+                <Image source={this.props.tourPhoto}/>
+                <Text>{this.props.tourDescription}</Text>
               </Body>
             </CardItem>
 
             <CardItem>
               <Left>
                 <Button transparent textStyle={{color: '#87838B'}}>
-                  <Text>{this.state.tourPrice}</Text>
+                  <Text>{this.props.tourPrice}</Text>
                 </Button>
               </Left>
               <Right>
-                <Text>{this.state.pointNumber}</Text>
+                <Text>{this.props.tourCategory}</Text>
               </Right>
             </CardItem>
 

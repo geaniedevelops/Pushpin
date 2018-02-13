@@ -2,16 +2,45 @@ import React, { Component } from 'react';
 import { Text, View, ImageBackground, StyleSheet } from 'react-native';
 import SearchCard from '../../../Components/SearchCard';
 import SearchForm from './SearchForm';
+import { zipcodeSearch } from '../../../../Config/Queries';
+
 
 export default class SearchScreen extends React.Component {
+
+state= {
+  tours: []
+}
+
+handleOnSearch() {
+  alert('Clicked');
+  zipcodeSearch().then(function(data)
+  {
+    this.setState({
+      tours: data.tours
+    })
+  })
+}
+
   render() {
     return (
       <View
         style={styles.view}>
         <SearchForm
-        style={styles.form}/>
-        <SearchCard
-        style={styles.card}/>
+          handleOnSearch={this.handleOnSearch}
+          style={styles.form}/>
+        {this.state.tours.map( tour => {
+        return(
+          <SearchCard
+            style={styles.card}
+            title={tour.title}
+            location={tour.location}
+            description={tour.description}
+            price={tour.price}
+            tourPoints={tour.tourPoints}
+            key={tour.id}
+            />
+        )}
+      )}
     </View>
     )
   }

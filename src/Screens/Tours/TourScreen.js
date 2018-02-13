@@ -5,7 +5,7 @@ import MyTours from './Components/MyTours';
 import TourSearch from './Components/TourSearch';
 import HeaderBar from '../../Components/HeaderBar';
 
-export default class TourTabs extends Component {
+export default class TourScreen extends Component {
   render() {
     return (
       <ImageBackground

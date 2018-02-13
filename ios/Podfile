@@ -4,6 +4,8 @@ platform :ios, '9.0'
 target 'ToursApp' do
   rn_path = '../node_modules/react-native'
   rn_maps_path = '../node_modules/react-native-maps'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
   pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
   pod 'React', path: rn_path, subspecs: [
@@ -47,4 +49,3 @@ end
 #  end
 #
 #end
-

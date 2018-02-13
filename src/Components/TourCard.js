@@ -20,7 +20,8 @@ export default class TourCard extends Component {
 
             <CardItem>
               <Body>
-                <Image source={require('../Assets/images/NYCtour.jpeg')} style={{height: 200, width: 200, flex: 1}}/>
+                <Image source={this.props.photo} 
+                  style={{height: 200, width: 200, flex: 1}}/>
                 <Text>{this.props.description}</Text>
               </Body>
             </CardItem>
@@ -34,6 +35,10 @@ export default class TourCard extends Component {
                 <Button
                   transparent
                   textStyle={{color: '#87838B'}}
+                  onPress={(event)=>{
+                    const { navigate } = this.props.navigation;
+                    navigate('MapScreen', { })
+                  }}
                   >
                 <Text>Start Tour</Text>
                 </Button>

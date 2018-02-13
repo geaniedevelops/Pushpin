@@ -7,6 +7,7 @@ import HomeScreen from '../Screens/Home/HomeScreen';
 import TourScreen from '../Screens/Tours/TourScreen';
 import MapScreen from '../Screens/Maps/MapScreen';
 import AccountScreen from '../Screens/Account/AccountScreen';
+import LogOut from './LogOut';
 
 const Navigator = DrawerNavigator({
   Home: {
@@ -20,6 +21,9 @@ const Navigator = DrawerNavigator({
   },
   Account: {
     screen: AccountScreen,
+  },
+  LogOut: {
+    screen: LogOut,
   }
 });
 
