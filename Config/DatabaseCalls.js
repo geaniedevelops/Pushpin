@@ -15,21 +15,20 @@ export function addNewUser() {
 //fires from 'Update' button in account HomeScreen
 export function updateUserInformation() {
 axios.post('https://shrouded-sea-19666.herokuapp.com/api/user/', {
-  params: {
-    id: this.state.userID
-  }
+    id: this.state.userID,
+    firstName: this.state.firstName,
+    lastName: this.state.lastName,
+    email: this.state.email,
+    phoneNumber: this.state.phoneNumber
 })
 }
 
 //add downloaded tour to user array
 //fires from "Download" button in SearchCard
 export function downloadTour() {
-axios.post('https://shrouded-sea-19666.herokuapp.com/api/user/', {
-  params: {
-    id: this.state.userID
-  },
+axios.post('https://shrouded-sea-19666.herokuapp.com/api/user/' + this.state.userID + '/downloadtour', {
   data: {
-    userTours: this.state.tourID
+    tourID: this.state.tourID
   }
 })
 .then()
@@ -43,7 +42,9 @@ axios.get('https://shrouded-sea-19666.herokuapp.com/api/user/', {
     id: this.state.userID
   }
 })
-.then()
+.then(function (results) {
+  return results.tours // this will get you an array of all the tours
+})
 }
 
 //get all tours in database
@@ -52,26 +53,7 @@ axios.get('https://shrouded-sea-19666.herokuapp.com/api/user/', {
 export function getAllTours(){
 axios.get('https://shrouded-sea-19666.herokuapp.com/api/tour')
 .then(function(response){
-  console.warn(response.data[0]);
-  for (let i = 0; i < response.data.length; i++) {
-    var tourId = response.data[i].id;
-    var tourTitle = response.data[i].title;
-    var tourCity = response.data[i].city;
-    var tourPhoto = response.data[i].photo;
-    var tourDescription = response.data[i].description;
-    var tourCategory = response.data[i].category;
-    var tourPrice = response.data[i].price;
-  }
-  return (
-    tour: {
-      id: tourId,
-      title: tourTitle,
-      city: tourCity,
-      photo: tourPhoto,
-      description: tourDescription,
-      category: tourCategory,
-      price: tourPrice
-  })
+  return response;
 })
 }
 
@@ -79,13 +61,10 @@ axios.get('https://shrouded-sea-19666.herokuapp.com/api/tour')
 //renders to toursearch/populates SearchCard
 //fires from onPress search button
 export function searchForTour(){
-axios.get('https://shrouded-sea-19666.herokuapp.com/api/tour', {
-  params: {
-    category: this.state.category,
-    city: this.state.city
-  }
+axios.get('https://shrouded-sea-19666.herokuapp.com/api/tour/city/' + this.state.city + '/category/' + this.state.city)
+.then(function (results) {
+  return results;
 })
-.then()
 }
 
 //queries for tourpoints in selected tour array
@@ -97,5 +76,7 @@ axios.get('https://shrouded-sea-19666.herokuapp.com/api/tour', {
   params: {
     id: this.state.id
   }
+}).then(function (results) {
+  return results.points // this will get you an array of points
 })
 }
