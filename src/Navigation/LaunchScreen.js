@@ -1,7 +1,7 @@
 import React, { Component, url } from 'react';
 import { View, StyleSheet, ScrollView, ImageBackground, Image, Navigate, KeyboardAvoidingView } from 'react-native';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import SignInForm from '../Authentication/Components/SignIn';
+import SignInForm from '../Authentication/SignIn';
 
 
 export default class LaunchScreen extends Component {

@@ -14,7 +14,7 @@ export default class TourCard extends Component {
               <Left>
                 <Body>
                   <Text>{this.props.tourTitle}</Text>
-                  <Text note>{this.props.tourZipcode}</Text>
+                  <Text note>{this.props.tourCity}</Text>
                 </Body>
               </Left>
             </CardItem>

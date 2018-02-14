@@ -28,7 +28,7 @@ export default class SearchForm extends Component {
           <Picker
             mode="dropdown"
             placeholder="Choose A Category"
-            selectedValue={this.state.theme}
+            selectedValue={this.state.category}
             onValueChange={this.onValueChange.bind(this)}>
               <Item label="All" value ="all"/>
               <Item label="Popular" value="popular" />
@@ -39,6 +39,7 @@ export default class SearchForm extends Component {
               <Item label="LGBT" value="lgbt"/>
               <Item label="Finance" value="finance"/>
               <Item label="Crime & Ghost" value="gritty"/>
+              <Item label="Parks" value="parks"/>
           </Picker>
           <Button
             style={styles.button}

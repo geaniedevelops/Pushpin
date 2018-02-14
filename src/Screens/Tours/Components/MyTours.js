@@ -11,28 +11,10 @@ export default class MyTours extends Component {
     tours: [],
   }
 
-  allTours()
-  {this.setState({
-      tours: data.tours
-    })
-  }
-
   render () {
     return (
       <ScrollView>
-        {tours.map( tour => {
-        return(
-          <TourCard
-            title={tours.title}
-            location={tours.location}
-            description={tours.description}
-            photo={tours.photo}
-            price={tours.price}
-            tourPoints={tours.tourPoints}
-            key={this.tours.id}
-            />
-        )}
-      )}
+          <TourCard/>
         </ScrollView>
     )
   }

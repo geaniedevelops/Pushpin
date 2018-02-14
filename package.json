@@ -34,13 +34,13 @@
     "react-native-redux-listener": "^0.3.0",
     "react-native-router-flux": "^4.0.0-beta.28",
     "react-native-vector-icons": "^4.5.0",
-    "react-navigation": "^1.0.3",
+    "react-navigation": "v1.0.0-beta.26",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-persist": "^5.7.0",
+    "redux-persist": "^5.7.2",
     "redux-thunk": "^2.2.0",
     "require": "^2.4.20",
-    "sequelize": "^4.33.3"
+    "sequelize": "^4.33.4"
   },
   "devDependencies": {
     "babel-jest": "22.1.0",

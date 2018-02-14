@@ -12,7 +12,7 @@ state= {
 }
 
 handleOnSearch() {
-  alert('Clicked');
+  console.warn(this.state.category);
   zipcodeSearch().then(function(data)
   {
     this.setState({

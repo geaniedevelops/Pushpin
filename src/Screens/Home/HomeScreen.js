@@ -1,30 +1,41 @@
 import React, { Component, url } from 'react';
 import { StyleSheet, ImageBackground } from 'react-native';
 import HeaderBar from '../../Components/HeaderBar';
-import TourCard from '../../Components/TourCard';
-
+import SearchCard from '../../Components/SearchCard';
+import { getAllTours } from '../../../Config/DatabaseCalls';
+import axios from 'axios';
 
 export default class HomeScreen extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-        isLoading: true
-      }
+constructor(props) {
+  super(props);
+  this.state = {
+    tour: {
+      id:'',
+      title: '',
+      city: '',
+      photo: '',
+      description: '',
+      category: '',
+      price: ''
     }
+  }
+}
 
+componentWillMount(){
+  getAllTours()
+}
 
-  render() {
+render() {
     return (
       <ImageBackground
         source={require('../../Assets/images/launch_background.png')}
         style={styles.image}>
         <HeaderBar/>
-        <TourCard/>
       </ImageBackground>
     );
   }
 }
-//
+
 const styles = StyleSheet.create({
   image: {
     flex: 1,
