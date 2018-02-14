@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, ImageBackground } from 'react-native';
 // import HomeScreen from './src/screens/HomeScreen';
 import Navigator from './src/Components/Navigator';
 import SignInForm from './src/Screens/SignInForm';
@@ -42,6 +42,5 @@ export default class App extends React.Component {
         return <SignInForm /> ;
     }
 }
-
 
 export default App;

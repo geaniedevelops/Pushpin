@@ -1,27 +1,47 @@
 import React, { Component } from 'react';
-import { Image, Text, View } from 'react-native';
-import { Card, Container, Content, H1 } from 'native-base';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Image } from 'react-native';
+import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { tours } from './PracticeTour'
 
 export default class TourCard extends Component {
-  render () {
+  render() {
     return (
-      <View>
-        <Container>
-          <Content>
-            <Card>
-            <H1>GALAXY TOUR</H1>
-            <Grid>
-                <Col size={30}>
-                </Col>
-                <Col size={70}>
-                  <Text>In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.</Text>
-                </Col>
-            </Grid>
+      <Container>
+        <Content>
+          <Card style={{flex: 0}}>
+            <CardItem>
+              <Left>
+                <Body>
+                  <Text>{this.props.title}</Text>
+                  <Text note>{this.props.location}</Text>
+                </Body>
+              </Left>
+            </CardItem>
+
+            <CardItem>
+              <Body>
+                <Image source={require('../Assets/images/NYCtour.jpeg')} style={{height: 200, width: 200, flex: 1}}/>
+                <Text>{this.props.description}</Text>
+              </Body>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent textStyle={{color: '#87838B'}}>
+                  <Text>{this.props.price}</Text>
+                </Button>
+              </Left>
+              <Right>
+                <Button
+                  transparent
+                  textStyle={{color: '#87838B'}}
+                  >
+                <Text>Start Tour</Text>
+                </Button>
+              </Right>
+            </CardItem>
           </Card>
         </Content>
       </Container>
-    </View>
-    )
-  }
+    );
+}
 }

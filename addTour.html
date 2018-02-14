@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Add Tour</title>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="jumbotron">
+    <h1>New Tour</h1>
+  </div>
+
+  <div class="container">
+    <div class="form-group">
+      <h6>Tour Title</h6>
+      <input type="text" class="form-control" id="tourTitle">
+
+      <h6>Long Description</h6>
+      <textarea type="text" class="form-control" id="longDescription"></textarea>
+
+      <h6>Price</h6>
+      <input type="int" class="form-control" id="price">
+      <button>Submit</button>
+
+
+      <h1>Add Point</h1>
+      <h4>Point 1</h4>
+      <h6>Point Name</h6>
+      <input type="text" class="form-control" id="pointName">
+
+      <h6>Point Description</h6>
+      <textarea type="text" class="form-control" id="shortDescription"></textarea>
+
+      <h6>Point Latitude</h6>
+      <input type="text" class="form-control" id="pointLat">
+
+      <h6>Point Longitude</h6>
+      <input type="text" class="form-control" id="pointLong">
+
+      <h4>Point 2</h4>
+      <h6>Point Name</h6>
+      <input type="text" class="form-control" id="pointName">
+
+      <h6>Point Description</h6>
+      <textarea type="text" class="form-control" id="shortDescription"></textarea>
+
+      <h6>Point Latitude</h6>
+      <input type="text" class="form-control" id="pointLat">
+
+      <h6>Point Longitude</h6>
+      <input type="text" class="form-control" id="pointLong">
+
+      <h4>Point 3</h4>
+      <h6>Point Name</h6>
+      <input type="text" class="form-control" id="pointName">
+
+      <h6>Point Description</h6>
+      <textarea type="text" class="form-control" id="shortDescription"></textarea>
+
+      <h6>Point Latitude</h6>
+      <input type="text" class="form-control" id="pointLat">
+
+      <h6>Point Longitude</h6>
+      <input type="text" class="form-control" id="pointLong">
+    </div>
+  </div>
+</body>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAZi_iIcwghfEIwynXj1u3gL6JR92Jqa1c",
+    authDomain: "toursapp-e5f26.firebaseapp.com",
+    databaseURL: "https://toursapp-e5f26.firebaseio.com",
+    projectId: "toursapp-e5f26",
+    storageBucket: "toursapp-e5f26.appspot.com",
+    messagingSenderId: "408414341283"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  function createNewTour(tourTitle, longDescription, shortDescription, price) {
+    firebase.database().ref('tourTitle/' + tourId).set({
+      tourTitle: tourTitle,
+      longDescription: longDescription,
+      shortDescription: shortDescription,
+      price: price
+    });
+  }
+
+  documentGetElementByID('#SubmitButton').on('click') {
+    event.preventDefault()
+    createNewTour();
+  };
+</script>
+
+</html>

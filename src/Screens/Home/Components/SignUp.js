@@ -1,137 +1,141 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, Modal } from 'react-native';
-import { Container, Content, List, ListItem, InputGroup, Input, Icon, Text, Picker, Button, Header, H1, H2, H3} from 'native-base';
-import firebase from 'react-native-firebase';
-import { StackNavigator } from 'react-navigation';
-const Item = Picker.Item;
+import * as firebase from 'firebase';
+import { View, Modal, Text, StyleSheet, KeyboardAvoidingView, TextInput } from 'react-native';
+import { Button, Item } from 'native-base';
+import firebaseApp from '../../../Utils/Firebase';
+
 
 export default class SignUpForm extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          email: "",
+          password: "",
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          modalVisible: false
+      }
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: "",
-            password: "",
-            firstName: "",
-            lastName: "",
-            phoneNumber: ""
-        }
-    }
-
-    onRegister() {
-  const { email, password, firstName, lastName, phoneNumber } = this.state;
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+  onRegister() {
+    const { email, password, firstName, lastName, phoneNumber } = this.state;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((user) => {
-        this.props.navigation.navigate('HomeScreen')
-        // Need to add: something to save the user object
+    this.props.navigation.navigate('HomeScreen')
+      // Need to add: something to save the user object
     })
     .catch((error) => {
-      const { code, message } = error;
-    });
+    const { code, message } = error;
+  });
 }
 
-    
+  openModal() {
+    this.setState({modalVisible:true});
+  }
 
-    }
-    render() {
-        return (
-          <ScrollView style={styles.background}>
-            <Modal
-              >
-            <Container>
-                <Content>
-                  <Header><H1 style={styles.pagetitle}>Sign Up</H1></Header>
-                    <List style={styles.form}>
-                        <ListItem>
-                            <InputGroup>
-                                <Input 
-                                value={this.state.firstName}
-                                onChangeText={(text) => this.setState({firstName: text})}
-                                inlineLabel label="First Name" 
-                                placeholder="First Name" 
-                                />
-                            </InputGroup>
-                        </ListItem>
+  closeModal() {
+    this.setState({modalVisible:false});
+  }
 
-                        <ListItem>
-                            <InputGroup>
-                                <Input 
-                                value={this.state.lastName}
-                                onChangeText={(text) => this.setState({lastName: text})}
-                                inlineLabel label="Last Name" 
-                                placeholder="Last Name" 
-                                />
-                            </InputGroup>
-                        </ListItem>
+  render() {
+    return (
+      <View>
+        <Modal
+         visible={this.state.modalVisible}
+         animationType={'slide'}
+         onRequestClose={() => this.closeModal()}>
 
-                        <ListItem>
-                            <InputGroup>
-                                <Input 
-                                value={this.state.email}
-                                onChangeText={(text) => this.setState({email: text})}
-                                placeholder="Email address"
-                                />
-                            </InputGroup>
-                        </ListItem>
-                        <ListItem>
-                            <InputGroup>
-                                <Input 
-                                value={this.state.password}
-                                onChangeText={(text) => this.setState({password: text})}
-                                placeholder="Password" 
-                                secureTextEntry />
-                            </InputGroup>
-                        </ListItem>
+         <Item fixedLabel>
+          <TextInput
+            style={{flex:1}}
+            placeholder='First Name'
+            label='First Name'
+            onChangeText={(text) => this.setState({firstName:text })}
+            value={this.state.firstName}/>
+          </Item>
 
-                        <ListItem>
-                            <InputGroup>
-                                <Input 
-                                value={this.state.phoneNumber}
-                                onChangeText={(text) => this.setState({phoneNumber: text})}
-                                placeholder="Phone Number" 
-                                keyboardType="numeric" 
-                                />
-                            </InputGroup>
-                        </ListItem>
-                    </List>
-                    <Button 
-                    style={styles.button}
-                    onPress={this.onRegister}
-                    ><Text>Sign Up</Text></Button>
-                </Content>
-            </Container>
-          </Modal>
-          </ScrollView>
-        );
-    }
-};
+          <Item fixedLabel>
+          <TextInput
+            style={{flex:1}}
+            placeholder='Last Name'
+            label='Last Name'
+            onChangeText={(text) => this.setState({lastName:text})}
+            value={this.state.lastName}/>
+          </Item>
+
+          <Item fixedLabel>
+          <TextInput
+            style={{flex:1}}
+            placeholder='Email Address'
+            label='Email'
+            onChangeText={(text) => this.setState({email:text})}
+            value={this.state.email}/>
+          </Item>
+
+          <Item fixedLabel>
+          <TextInput
+            style={{flex:1}}
+            placeholder='Password'
+            label='Password'
+            secureTextEntry
+            onChangeText={(text) => this.setState({password:text})}
+            value={this.state.password}/>
+          </Item>
+
+          <Item fixedLabel>
+          <TextInput
+            style={{flex:1}}
+            placeholder="Phone Number"
+            label="Phone Number"
+            keyboardType="numeric"
+            onChangeText={(text) => this.setState({phoneNumber:text})}
+            value={this.state.phoneNumber}/>
+          </Item>
+
+          <Button
+            round
+            info
+            onPress={this.onRegister}
+            style={{width:350}}>
+            <Text>Sign Up</Text>
+          </Button>
+
+          <Text
+            onPress={() => this.closeModal()}>
+            Have An Account? Sign In
+          </Text>
+        </Modal>
+
+        <Button
+          round
+          onPress={() => this.openModal()}
+          style={styles.openButton}>
+          <Text
+            style={styles.text}>
+            Sign Up
+          </Text>
+        </Button>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  background: {
-    backgroundColor: "#C3C48D",
-  },
-  pageTitle: {
-    paddingTop: 5
+  button: {
+    flex: 2,
+    width: 350
   },
   form: {
-    marginTop: 20,
-    marginLeft: 10,
-    marginRight:10,
-    backgroundColor: "#C3C48D",
-    paddingTop:5
+    flex: 4,
   },
-
-  button: {
-    backgroundColor: "#928C6F",
-    alignSelf: 'center',
-    marginTop: 20,
-    marginBottom: 20
+  openButton: {
+    width: 150,
+    backgroundColor:'#3385e5',
+    marginTop: 10,
+    justifyContent: 'center'
+  },
+  text: {
+    color:'rgb(254, 250, 236)'
   }
 });
-
-//LOGIC NOTES
-//SIGN IN/SIGN  UP MODALS:
-// animated='true'
-// visible= 'false'
-// onRequestClose="Logic for submitting new user or logging in current user";
-// appears through logic to determine whether users are already logged in
