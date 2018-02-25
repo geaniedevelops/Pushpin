@@ -12,7 +12,7 @@ export function addNewUser() {
 }
 
 //update user information in DATABASE
-//fires from 'Update' button in account HomeScreen
+//fires from 'Update' button in accountScreen
 export function updateUserInformation() {
 axios.post('https://shrouded-sea-19666.herokuapp.com/api/user/', {
     id: this.state.userID,
@@ -44,6 +44,7 @@ axios.get('https://shrouded-sea-19666.herokuapp.com/api/user/', {
 })
 .then(function (results) {
   return results.tours // this will get you an array of all the tours
+  console.warn(results.tours);
 })
 }
 
@@ -53,7 +54,8 @@ axios.get('https://shrouded-sea-19666.herokuapp.com/api/user/', {
 export function getAllTours(){
 axios.get('https://shrouded-sea-19666.herokuapp.com/api/tour')
 .then(function(response){
-  return response;
+  return response
+  console.warn(response);
 })
 }
 

@@ -6,10 +6,10 @@ export default class PointItem extends Component {
   render() {
     return (
       <ListItem>
-        <Thumbnail square size={80} source={require('../../../Assets/images/dontpanic.png')} />
+        <Thumbnail square size={80} source={require('../../../Assets/images/icon.png')} />
         <Body>
-          <Text>Earth</Text>
-          <Text note>So long, and thanks for all the fish.</Text>
+          <Text>{this.props.title}</Text>
+          <Text note>{this.props.description}</Text>
         </Body>
       </ListItem>
     )

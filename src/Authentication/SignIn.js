@@ -26,9 +26,9 @@ export default class SignInForm extends Component {
       errorMessage: '',
       loading: false
     });
-    alert('Welcome!', 'Thank you for signing in, ' + user.email);
+    alert('Welcome Back')
   }
-  
+
 
   handlePress({ email, password }) {
     const { alert } = Alert;

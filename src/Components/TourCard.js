@@ -6,9 +6,7 @@ import { tours } from './PracticeTour'
 export default class TourCard extends Component {
   render() {
     return (
-      <Container>
-        <Content>
-          <Card>
+          <Card style={{flex: 0}}>
             <CardItem>
               <Left>
                 <Body>
@@ -20,8 +18,8 @@ export default class TourCard extends Component {
 
             <CardItem>
               <Body>
-                <Image source={this.props.photo} 
-                  style={{height: 200, width: 200, flex: 1}}/>
+                <Image source={require('../Assets/images/NYCtour.jpeg')}
+                  style={{height: 200, width: 330}}/>
                 <Text>{this.props.description}</Text>
               </Body>
             </CardItem>
@@ -45,8 +43,6 @@ export default class TourCard extends Component {
               </Right>
             </CardItem>
           </Card>
-        </Content>
-      </Container>
     );
 }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { View, Modal, Text, StyleSheet, KeyboardAvoidingView, Alert } from 'react-native';
 import { Button, Item, Container, Input } from 'native-base';
+import { addNewUser } from '../../Config/DatabaseCalls';
 
 
 export default class SignUpForm extends Component {
@@ -61,6 +62,7 @@ handlePress({ email, password}) {
   const { alert } = Alert;
   this.setState({ loading: true });
   firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(addNewUser())
       .then(user => alert('Thank you for signing up.'))
       .catch(this.onSignUpError.bind(this));
 }
