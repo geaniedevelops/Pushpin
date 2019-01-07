@@ -22,8 +22,11 @@ target 'ToursApp' do
     'DevSupport'
   ]
 
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
 # Mapbox
+
   pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
 
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
@@ -47,4 +50,13 @@ end
 #  end
 #
 #end
+
+  # Pods for toursapp-tvOS
+
+  target 'ToursApp-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
 
